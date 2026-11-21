@@ -42,7 +42,10 @@
     };
   </script>
   <style>
-    body { font-family: 'Inter', sans-serif; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f6f4ef;
+    }
     h1, h2, h3, .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
     .line-clamp-2 {
       display: -webkit-box;
@@ -56,15 +59,12 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .pine-pattern-light {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60'%3E%3Cg fill='%231b4332' fill-opacity='0.04'%3E%3Cpolygon points='20,10 10,32 16,32 8,50 32,50 24,32 30,32'/%3E%3Cpolygon points='65,16 57,34 62,34 55,48 75,48 68,34 73,34'/%3E%3Cpolygon points='100,12 92,31 97,31 90,49 110,49 103,31 108,31'/%3E%3C/g%3E%3C/svg%3E");
-    }
   </style>
 </head>
-<body class="bg-[#f5f3ee] text-stone-800 antialiased selection:bg-forest-800 selection:text-white">
+<body class="bg-[#f6f4ef] text-stone-800 antialiased selection:bg-forest-800 selection:text-white">
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200/90">
+  <header class="sticky top-0 z-40 bg-[#fbfaf7]/95 backdrop-blur border-b border-stone-200/90">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
       <a href="#" class="flex items-center gap-3 shrink-0">
         <div class="w-10 h-10 rounded-xl bg-forest-800 text-white flex items-center justify-center font-display font-bold text-lg shadow-sm">
@@ -91,7 +91,7 @@
       </nav>
 
       <div class="flex items-center gap-2.5">
-        <button onclick="openAdminModal('events')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-100 text-stone-800 text-xs sm:text-sm font-semibold transition shadow-sm">
+        <button onclick="openAdminModal('events')" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] hover:bg-stone-100 text-stone-800 text-xs sm:text-sm font-semibold transition shadow-sm">
           <svg class="w-4 h-4 text-forest-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
@@ -105,19 +105,18 @@
     </div>
   </header>
 
-  <!-- HERO WITH PINE & SPRUCE SILHOUETTES -->
+  <!-- HERO WITH PINE SILHOUETTES -->
   <section class="relative overflow-hidden bg-gradient-to-br from-forest-900 via-forest-800 to-emerald-950 text-white">
-    <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 82% 20%, #34d399 0%, transparent 45%);"></div>
+    <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(circle at 80% 20%, #34d399 0%, transparent 45%);"></div>
 
-    <!-- Subtle pine & spruce tree silhouettes -->
-    <div class="absolute inset-x-0 bottom-0 pointer-events-none select-none opacity-25">
-      <svg viewBox="0 0 1440 190" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-28 sm:h-40 object-cover" preserveAspectRatio="none">
-        <path d="M0 190V115L22 115L8 88L28 88L14 60L34 60L20 34L42 34L28 12L54 12L40 34L60 34L46 60L66 60L52 88L72 88L58 115L84 115L68 84L88 84L74 52L96 52L82 24L108 24L94 52L114 52L100 84L120 84L104 115L145 115L128 78L150 78L134 42L158 42L142 16L170 16L154 42L176 42L160 78L182 78L165 115L230 115L214 82L236 82L220 48L244 48L228 20L254 20L238 48L260 48L244 82L266 82L250 115L340 115L322 74L346 74L328 38L354 38L338 8L366 8L350 38L374 38L356 74L380 74L362 115L460 115L444 80L466 80L450 46L474 46L458 18L484 18L468 46L490 46L474 80L496 80L480 115L610 115L592 72L616 72L598 34L626 34L608 4L638 4L622 34L646 34L628 72L652 72L634 115L760 115L744 82L766 82L750 48L774 48L758 20L784 20L768 48L790 48L774 82L796 82L780 115L920 115L902 74L926 74L908 36L936 36L918 6L948 6L932 36L956 36L938 74L962 74L944 115L1090 115L1074 80L1096 80L1080 46L1104 46L1088 18L1114 18L1098 46L1120 46L1104 80L1126 80L1110 115L1250 115L1232 72L1256 72L1238 34L1266 34L1248 4L1278 4L1262 34L1286 34L1268 72L1292 72L1274 115L1440 115V190H0Z" fill="#071a12"/>
-        <path d="M0 190V138L30 138L16 112L38 112L24 86L48 86L34 62L60 62L46 86L68 86L54 112L76 112L62 138L115 138L98 104L122 104L106 70L132 70L116 42L144 42L128 70L150 70L134 104L158 104L142 138L270 138L252 100L276 100L260 66L286 66L270 36L298 36L282 66L304 66L288 100L312 100L294 138L430 138L414 106L436 106L420 74L444 74L428 46L454 46L438 74L460 74L444 106L466 106L450 138L680 138L662 102L686 102L670 68L696 68L680 38L708 38L692 68L714 68L698 102L722 102L704 138L890 138L874 106L896 106L880 74L904 74L888 46L914 46L898 74L920 74L904 106L926 106L910 138L1140 138L1122 100L1146 100L1130 66L1156 66L1140 36L1168 36L1152 66L1174 66L1158 100L1182 100L1164 138L1330 138L1314 106L1336 106L1320 74L1344 74L1328 46L1354 46L1338 74L1360 74L1344 106L1366 106L1350 138L1440 138V190H0Z" fill="#0d261b" fill-opacity="0.75"/>
+    <!-- Pines Silhouette at Bottom of Hero -->
+    <div class="absolute inset-x-0 bottom-0 pointer-events-none select-none opacity-30">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-24 sm:h-28 object-cover" preserveAspectRatio="none">
+        <path d="M0 120V82L22 82L8 58L28 58L14 34L36 34L22 12L46 12L32 34L52 34L38 58L58 58L44 82L96 82L78 48L102 48L86 18L112 18L96 48L118 48L100 82L185 82L167 44L191 44L173 14L201 14L185 44L207 44L189 82L312 82L294 48L318 48L302 18L328 18L312 48L334 48L316 82L470 82L452 44L476 44L458 14L486 14L470 44L492 44L474 82L630 82L612 48L636 48L620 18L646 18L630 48L652 48L634 82L815 82L797 44L821 44L803 14L831 14L815 44L837 44L819 82L1010 82L992 48L1016 48L1000 18L1026 18L1010 48L1032 48L1014 82L1215 82L1197 44L1221 44L1203 14L1231 14L1215 44L1237 44L1219 82L1365 82L1347 48L1371 48L1355 18L1381 18L1365 48L1387 48L1369 82L1440 82V120H0Z" fill="#081c13"/>
       </svg>
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-20 sm:pt-20 sm:pb-24 relative z-10">
       <div class="max-w-3xl">
         <div id="heroBadgeText" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-emerald-200 text-xs font-medium mb-5">
           <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -133,174 +132,6 @@
         </p>
 
         <!-- Search Bar -->
-        <div class="bg-white p-2 rounded-2xl shadow-xl flex flex-col sm:flex-row gap-2 max-w-2xl">
+        <div class="bg-[#fcfbf8] p-2 rounded-2xl shadow-xl flex flex-col sm:flex-row gap-2 max-w-2xl">
           <div class="relative flex-1">
-            <svg class="w-5 h-5 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input id="mainSearchInput" type="text" oninput="applyFilters()" placeholder="Ieškoti renginio, atlikėjo, sanatorijos ar vietos..." class="w-full pl-11 pr-4 py-3 rounded-xl text-stone-800 placeholder-stone-400 focus:outline-none text-sm sm:text-base" />
-          </div>
-          <a href="#renginiai" class="px-6 py-3 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold text-sm sm:text-base text-center transition shrink-0">
-            Rasti renginius ↓
-          </a>
-        </div>
-
-        <!-- Quick Filters -->
-        <div class="flex flex-wrap items-center gap-2 mt-5 text-xs sm:text-sm">
-          <span class="text-emerald-200/80 mr-1">Greiti filtrai:</span>
-          <button onclick="setQuickFilter('all')" id="qf-all" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-white text-forest-900 font-semibold transition">Visi</button>
-          <button onclick="setQuickFilter('weekend')" id="qf-weekend" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium transition">Šį savaitgalį</button>
-          <button onclick="setQuickFilter('free')" id="qf-free" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium transition">Nemokami renginiai</button>
-          <button onclick="setQuickFilter('featured')" id="qf-featured" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium transition">Didieji renginiai</button>
-          <button onclick="setQuickFilter('family')" id="qf-family" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium transition">Šeimai</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EVENTS SECTION + COMPACT MONTH CALENDAR WITH PHOTO & TITLE -->
-  <section id="renginiai" class="pine-pattern-light max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-    <!-- Category Pills -->
-    <div class="flex flex-wrap items-center gap-2 mb-6">
-      <button onclick="setCategoryFilter('all')" data-cat="all" class="cat-btn px-4 py-2 rounded-full bg-forest-800 text-white text-sm font-semibold transition">Visi tipai</button>
-      <button onclick="setCategoryFilter('Koncertai ir gyva muzika')" data-cat="Koncertai ir gyva muzika" class="cat-btn px-4 py-2 rounded-full bg-[#fcfbf8] border border-stone-200 hover:border-forest-600 text-stone-700 text-sm font-medium transition">Koncertai ir gyva muzika</button>
-      <button onclick="setCategoryFilter('Šeimai ir vaikams')" data-cat="Šeimai ir vaikams" class="cat-btn px-4 py-2 rounded-full bg-[#fcfbf8] border border-stone-200 hover:border-forest-600 text-stone-700 text-sm font-medium transition">Šeimai ir vaikams</button>
-      <button onclick="setCategoryFilter('Edukacijos ir parodos')" data-cat="Edukacijos ir parodos" class="cat-btn px-4 py-2 rounded-full bg-[#fcfbf8] border border-stone-200 hover:border-forest-600 text-stone-700 text-sm font-medium transition">Edukacijos ir parodos</button>
-      <button onclick="setCategoryFilter('Aktyvus laisvalaikis')" data-cat="Aktyvus laisvalaikis" class="cat-btn px-4 py-2 rounded-full bg-[#fcfbf8] border border-stone-200 hover:border-forest-600 text-stone-700 text-sm font-medium transition">Aktyvus laisvalaikis</button>
-      <button onclick="setCategoryFilter('Šventės ir mugės')" data-cat="Šventės ir mugės" class="cat-btn px-4 py-2 rounded-full bg-[#fcfbf8] border border-stone-200 hover:border-forest-600 text-stone-700 text-sm font-medium transition">Šventės ir mugės</button>
-    </div>
-
-    <!-- Compact Interactive Month Calendar Box -->
-    <div class="bg-[#fcfbf8] rounded-2xl border border-stone-200/90 shadow-sm p-3.5 sm:p-5 mb-9">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-3 mb-3 border-b border-stone-200/70">
-        <div class="flex items-baseline gap-3">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-forest-700">Kalendorius</span>
-          <h3 id="calendarMonthTitle" class="font-display font-bold text-base sm:text-lg text-stone-900"></h3>
-        </div>
-        <div class="flex flex-wrap items-center gap-1.5">
-          <button type="button" onclick="changeCalendarMonth(-1)" class="px-2.5 py-1 rounded-lg bg-white border border-stone-200 hover:bg-stone-100 text-xs font-semibold text-stone-700 transition">←</button>
-          <button type="button" onclick="jumpToCurrentMonth()" class="px-2.5 py-1 rounded-lg bg-white border border-stone-200 hover:bg-stone-100 text-xs font-semibold text-stone-700 transition">Šis mėnuo</button>
-          <button type="button" onclick="changeCalendarMonth(1)" class="px-2.5 py-1 rounded-lg bg-white border border-stone-200 hover:bg-stone-100 text-xs font-semibold text-stone-700 transition">→</button>
-          <button type="button" id="clearSelectedDateBtn" onclick="clearSelectedCalendarDate()" class="hidden px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-semibold transition">
-            Rodyti visus
-          </button>
-        </div>
-      </div>
-
-      <!-- Weekdays -->
-      <div class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">
-        <div>Pr</div>
-        <div>An</div>
-        <div>Tr</div>
-        <div>Kt</div>
-        <div>Pn</div>
-        <div class="text-forest-700">Št</div>
-        <div class="text-forest-700">Sk</div>
-      </div>
-
-      <!-- Days Grid -->
-      <div id="calendarDaysGrid" class="grid grid-cols-7 gap-1"></div>
-
-      <div id="calendarSelectedHint" class="mt-3 pt-2.5 border-t border-stone-200/70 text-[11px] text-stone-500 flex flex-wrap items-center justify-between gap-2">
-        <span>Spauskite ant dienos langelio, kad išfiltruotumėte tos dienos renginius.</span>
-        <span id="calendarActiveDateBadge" class="font-semibold text-forest-800"></span>
-      </div>
-    </div>
-
-    <!-- Filtered Events Header -->
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
-      <div>
-        <h2 id="eventsSectionHeading" class="font-display text-2xl sm:text-3xl font-bold text-stone-900">Visi renginiai</h2>
-        <p id="eventsCounterText" class="text-sm text-stone-500 mt-1">Rodoma renginių: 0</p>
-      </div>
-      <div class="flex items-center gap-2">
-        <label for="sortSelect" class="text-xs font-medium text-stone-500">Rūšiuoti:</label>
-        <select id="sortSelect" onchange="applyFilters()" class="px-3 py-2 rounded-xl border border-stone-200 bg-[#fcfbf8] text-sm text-stone-700 focus:outline-none focus:border-forest-700">
-          <option value="featured">Stambiausi viršuje, tada pagal datą</option>
-          <option value="dateAsc">Artimiausi pagal datą</option>
-          <option value="dateDesc">Vėliausi pagal datą</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Events Grid -->
-    <div id="eventsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-  </section>
-
-  <!-- CAFES & DINING SECTION -->
-  <section id="kavines" class="bg-[#eae6dc] border-y border-stone-300/70 py-14 sm:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-forest-700">Kurorto skoniai</span>
-          <h2 class="font-display text-2xl sm:text-3xl font-bold text-stone-900 mt-1">Kur pavalgyti ir praleisti vakarą</h2>
-          <p class="text-sm text-stone-600 mt-1">Rekomenduojamos kavinės, restoranai ir jų populiariausi meniu pasiūlymai.</p>
-        </div>
-        <button onclick="openAdminModal('cafes')" class="self-start sm:self-auto px-4 py-2 rounded-xl bg-[#fcfbf8] border border-stone-300 hover:bg-white text-xs sm:text-sm font-semibold text-stone-700 transition">
-          Redaguoti kavines ir meniu
-        </button>
-      </div>
-
-      <div id="cafesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </div>
-  </section>
-
-  <!-- PERSONAL INSIGHTS / CONCERTS SECTION -->
-  <section id="izvalgos" class="relative overflow-hidden bg-gradient-to-b from-[#f2efe8] to-[#e5e9e4] py-14 sm:py-18">
-    <!-- Subtle pine silhouettes along bottom of insights section -->
-    <div class="absolute inset-x-0 bottom-0 pointer-events-none select-none opacity-15">
-      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-20 object-cover" preserveAspectRatio="none">
-        <path d="M0 120V78L24 78L10 54L30 54L16 30L38 30L24 10L48 10L34 30L54 30L40 54L60 54L46 78L95 78L78 48L100 48L84 20L108 20L94 48L114 48L98 78L190 78L174 46L196 46L180 16L206 16L190 46L210 46L194 78L330 78L312 42L336 42L318 12L346 12L330 42L352 42L334 78L520 78L502 44L526 44L510 14L536 14L520 44L542 44L524 78L740 78L722 42L746 42L728 12L756 12L740 42L762 42L744 78L980 78L962 44L986 44L970 14L996 14L980 44L1002 44L984 78L1210 78L1192 42L1216 42L1198 12L1226 12L1210 42L1232 42L1214 78L1440 78V120H0Z" fill="#1b4332"/>
-      </svg>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/90 text-amber-900 text-xs font-semibold mb-2 border border-amber-200/80">
-            <span>Asmeninė rubrika</span>
-            <span>•</span>
-            <span>Lietuva ir užsienis</span>
-          </div>
-          <h2 id="insightsSectionTitle" class="font-display text-2xl sm:text-3xl font-bold text-stone-900">
-            Įžvalgos iš koncertų ir muzikos atradimai
-          </h2>
-          <p id="insightsSectionSubtitle" class="text-sm sm:text-base text-stone-600 mt-1 max-w-2xl">
-            Asmeniniai įspūdiai apie gyvus pasirodymus, grupes, festivalius ir koncertų erdves ne tik Druskininkuose, bet ir visoje Lietuvoje bei užsienyje.
-          </p>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-2">
-          <button onclick="setInsightScopeFilter('all')" data-scope="all" class="insight-scope-btn px-3.5 py-2 rounded-xl bg-stone-900 text-white text-xs sm:text-sm font-semibold transition">Visi įrašai</button>
-          <button onclick="setInsightScopeFilter('Druskininkai / Lietuva')" data-scope="Druskininkai / Lietuva" class="insight-scope-btn px-3.5 py-2 rounded-xl bg-[#fcfbf8] border border-stone-200 hover:border-stone-400 text-stone-700 text-xs sm:text-sm font-medium transition">Druskininkai / Lietuva</button>
-          <button onclick="setInsightScopeFilter('Užsienis')" data-scope="Užsienis" class="insight-scope-btn px-3.5 py-2 rounded-xl bg-[#fcfbf8] border border-stone-200 hover:border-stone-400 text-stone-700 text-xs sm:text-sm font-medium transition">Užsienis</button>
-          <button onclick="openAdminModal('insights', true)" class="px-3.5 py-2 rounded-xl bg-forest-800 hover:bg-forest-700 text-white text-xs sm:text-sm font-semibold transition">
-            + Nauja įžvalga
-          </button>
-        </div>
-      </div>
-
-      <div class="mb-6 max-w-md">
-        <input id="insightsSearchInput" type="text" oninput="renderInsights()" placeholder="Ieškoti pagal grupę, miestą ar žanrą..." class="w-full px-4 py-2.5 rounded-xl border border-stone-200 bg-[#fcfbf8] text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-forest-700" />
-      </div>
-
-      <div id="insightsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-    </div>
-  </section>
-
-  <!-- VIP VIDEO / FEATURED MOMENT -->
-  <section id="vip-video" class="relative overflow-hidden bg-gradient-to-br from-forest-900 via-forest-800 to-emerald-950 text-white py-14 sm:py-16">
-    <div class="absolute inset-x-0 bottom-0 pointer-events-none select-none opacity-20">
-      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-24 object-cover" preserveAspectRatio="none">
-        <path d="M0 120V78L24 78L10 54L30 54L16 30L38 30L24 10L48 10L34 30L54 30L40 54L60 54L46 78L110 78L92 44L116 44L100 14L126 14L110 44L132 44L116 78L240 78L222 42L246 42L228 12L256 12L240 42L262 42L244 78L420 78L402 44L426 44L410 14L436 14L420 44L442 44L424 78L640 78L622 42L646 42L628 12L656 12L640 42L662 42L644 78L880 78L862 44L886 44L870 14L896 14L880 44L902 44L884 78L1130 78L1112 42L1136 42L1118 12L1146 12L1130 42L1152 42L1134 78L1440 78V120H0Z" fill="#071a12"/>
-      </svg>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-5">
-          <span class="inline-block px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold mb-3">Savaitės rekomendacija</span>
-          <h2 id="vipTitleText" class="font-display text-2xl sm:text-3xl font-bold leading-snug mb-3">
-            Kurorto akimirkos ir išskirtinis pasirodymas
-          </h2>
-          <p id="vipDescText" class="text-emerald-100/85 text-sm sm:text
+            <svg class="w-5 h-5 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 2
