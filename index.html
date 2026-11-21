@@ -212,7 +212,10 @@
         <h2 id="eventsSectionHeading" class="font-display text-2xl sm:text-3xl font-bold text-stone-900">Visi renginiai</h2>
         <p id="eventsCounterText" class="text-sm text-stone-500 mt-1">Rodoma renginių: 0</p>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="openAdminModal('events', true)" class="px-3.5 py-2 rounded-xl bg-forest-800 hover:bg-forest-700 text-white text-xs sm:text-sm font-semibold transition">
+          + Įkelti renginį su foto ir laiku
+        </button>
         <label for="sortSelect" class="text-xs font-medium text-stone-500">Rūšiuoti:</label>
         <select id="sortSelect" onchange="applyFilters()" class="px-3 py-2 rounded-xl border border-stone-200 bg-[#fcfbf8] text-sm text-stone-700 focus:outline-none focus:border-forest-700">
           <option value="featured">Stambiausi viršuje, tada pagal datą</option>
@@ -244,7 +247,7 @@
     </div>
   </section>
 
-  <!-- PERSONAL INSIGHTS / CONCERTS SECTION (SOFT PINE TINT + PINE ACCENT) -->
+  <!-- PERSONAL INSIGHTS / CONCERTS SECTION (SOFT PINE TINT) -->
   <section id="izvalgos" class="relative overflow-hidden bg-[#e7ede9] py-14 sm:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
@@ -258,7 +261,7 @@
             Įžvalgos iš koncertų ir muzikos atradimai
           </h2>
           <p id="insightsSectionSubtitle" class="text-sm sm:text-base text-stone-600 mt-1 max-w-2xl">
-            Asmeniniai įspūdiai apie gyvus pasirodymus, grupes, festivalius ir koncertų erdves ne tik Druskininkuose, bet ir visoje Lietuvoje bei užsienyje.
+            Asmeniniai įspūdžiai apie gyvus pasirodymus, grupes, festivalius ir koncertų erdves ne tik Druskininkuose, bet ir visoje Lietuvoje bei užsienyje.
           </p>
         </div>
 
@@ -312,18 +315,32 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER WITH CLEAR EVENT SUBMISSION INFO -->
   <footer class="bg-stone-950 text-stone-400 py-10 border-t border-stone-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-sm">
-      <div>
-        <div id="footerBrandText" class="font-display font-bold text-white text-base">RenginiaiDruskininkuose.lt</div>
-        <p id="footerContactText" class="text-xs text-stone-400 mt-1">Kurorto renginių, kavinių ir gyvos muzikos įžvalgų gidas • info@renginiaidruskininkuose.lt</p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-sm">
+      <div class="bg-stone-900/90 border border-stone-800 rounded-2xl p-4 sm:p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-400">Norite paskelbti ar atnaujinti renginį?</div>
+          <p class="text-xs sm:text-sm text-stone-300">
+            Parašykite el. paštu <a href="mailto:info@renginiaidruskininkuose.lt" class="text-white underline font-semibold">info@renginiaidruskininkuose.lt</a> ir nurodykite: <strong>pavadinimą, datą, pradžios/pabaigos laiką, vietą, trumpą aprašymą ir nuotrauką arba nuorodą į renginį</strong>.
+          </p>
+        </div>
+        <button onclick="openAdminModal('events', true)" class="px-4 py-2 rounded-xl bg-forest-800 hover:bg-forest-700 text-white text-xs font-semibold shrink-0 transition self-start lg:self-auto">
+          + Greitai įvesti čia
+        </button>
       </div>
-      <div class="flex flex-wrap items-center gap-4 text-xs">
-        <a href="#renginiai" class="hover:text-white transition">Renginiai</a>
-        <a href="#kavines" class="hover:text-white transition">Kavinės</a>
-        <a href="#izvalgos" class="hover:text-white transition">Įžvalgos / Koncertai</a>
-        <button onclick="openAdminModal('backup')" class="text-emerald-400 hover:text-emerald-300 font-semibold transition">Atsisiųsti HTML / Kopija</button>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div>
+          <div id="footerBrandText" class="font-display font-bold text-white text-base">RenginiaiDruskininkuose.lt</div>
+          <p id="footerContactText" class="text-xs text-stone-400 mt-1">Kurorto renginių, kavinių ir gyvos muzikos įžvalgų gidas • info@renginiaidruskininkuose.lt</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 text-xs">
+          <a href="#renginiai" class="hover:text-white transition">Renginiai</a>
+          <a href="#kavines" class="hover:text-white transition">Kavinės</a>
+          <a href="#izvalgos" class="hover:text-white transition">Įžvalgos / Koncertai</a>
+          <button onclick="openAdminModal('backup')" class="text-emerald-400 hover:text-emerald-300 font-semibold transition">Atsisiųsti HTML / Kopija</button>
+        </div>
       </div>
     </div>
   </footer>
@@ -342,7 +359,7 @@
       <div class="px-5 sm:px-6 py-4 bg-stone-900 text-white flex items-center justify-between gap-4 shrink-0">
         <div>
           <h2 class="font-display font-bold text-lg sm:text-xl">Svetainės valdymo ir redagavimo centras</h2>
-          <p class="text-xs text-stone-300">Redaguokite renginius, kavines, asmenines koncertų įžvalgas, tekstus ir atsisiųskite atnaujintą index.html</p>
+          <p class="text-xs text-stone-300">Greitas renginių, laiko, nuotraukų, kavinių ir koncertų įžvalgų valdymas vienoje vietoje</p>
         </div>
         <button onclick="closeAdminModal()" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-lg font-bold transition">✕</button>
       </div>
@@ -372,9 +389,12 @@
         <!-- TAB 1: EVENTS -->
         <div id="adminTab-events" class="admin-tab-panel grid grid-cols-1 lg:grid-cols-12 gap-6">
           <div class="lg:col-span-6 bg-[#f6f4ef] p-4 sm:p-5 rounded-2xl border border-stone-200 space-y-4">
-            <div class="flex items-center justify-between">
+            <div class="flex flex-wrap items-center justify-between gap-2">
               <h3 id="eventFormHeading" class="font-display font-bold text-base text-stone-900">+ Naujas renginys</h3>
-              <button type="button" onclick="resetEventForm()" class="text-xs text-forest-700 hover:underline font-semibold">Išvalyti formą</button>
+              <div class="flex items-center gap-3 text-xs">
+                <button type="button" onclick="fillSampleEventTemplate()" class="text-amberwarm-600 hover:underline font-semibold">Užpildyti pavyzdį</button>
+                <button type="button" onclick="resetEventForm()" class="text-forest-700 hover:underline font-semibold">Išvalyti</button>
+              </div>
             </div>
 
             <input type="hidden" id="evId" />
@@ -382,10 +402,10 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Renginio pavadinimas *</label>
-                <input id="evTitle" type="text" placeholder="Pvz., Kalėdinis koncertas kurorte" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
+                <input id="evTitle" type="text" placeholder="Pvz., Vakaro koncertas prie eglės" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
               </div>
               <div>
-                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Data (YYYY-MM-DD) *</label>
+                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Data *</label>
                 <input id="evDate" type="date" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
               </div>
             </div>
@@ -399,18 +419,26 @@
               <button type="button" onclick="shiftEventDate(14)" class="px-2.5 py-1 rounded-lg bg-[#fcfbf8] border border-stone-300 hover:bg-stone-100 font-medium">+14 d.</button>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div>
-                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Laikas</label>
-                <input id="evTime" type="text" placeholder="Pvz., 19:30" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
+                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Pradžios laikas</label>
+                <input id="evTimeStart" type="time" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
               </div>
               <div>
-                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Renginio vieta *</label>
-                <input id="evLocation" type="text" placeholder="Pvz., Druskininkų pramogų aikštė" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
+                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Pabaigos laikas</label>
+                <input id="evTimeEnd" type="time" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Kaina / Bilietai</label>
+                <input id="evPrice" type="text" placeholder="Nemokamas arba 15 €" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Renginio vieta *</label>
+                <input id="evLocation" type="text" placeholder="Pvz., Druskininkų pramogų aikštė" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
+              </div>
               <div>
                 <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Kategorija</label>
                 <select id="evCategory" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm">
@@ -421,18 +449,14 @@
                   <option value="Šventės ir mugės">Šventės ir mugės</option>
                 </select>
               </div>
-              <div>
-                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Kaina / Bilietai</label>
-                <input id="evPrice" type="text" placeholder="Pvz., Nemokamas arba 15 €" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
-              </div>
             </div>
 
             <div>
-              <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Nuotraukos nuoroda (URL) arba įkėlimas iš kompiuterio</label>
+              <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Nuotrauka (URL nuoroda arba įkelti iš kompiuterio)</label>
               <div class="flex flex-col sm:flex-row gap-2">
                 <input id="evImage" type="text" oninput="updateImagePreview('evImage', 'evImagePreview')" placeholder="https://..." class="flex-1 px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
                 <label class="px-3 py-2 rounded-xl bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-semibold cursor-pointer text-center shrink-0">
-                  Įkelti failą
+                  Įkelti foto
                   <input type="file" accept="image/*" class="hidden" onchange="handleLocalImageUpload(event, 'evImage', 'evImagePreview')" />
                 </label>
               </div>
@@ -440,8 +464,13 @@
             </div>
 
             <div>
+              <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Nuoroda į bilietus / renginio puslapį (nebūtina)</label>
+              <input id="evTicketUrl" type="text" placeholder="https://..." class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
+            </div>
+
+            <div>
               <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Aprašymas *</label>
-              <textarea id="evDescription" rows="3" placeholder="Trumpai aprašykite, kas vyks..." class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm"></textarea>
+              <textarea id="evDescription" rows="3" placeholder="Trumpai aprašykite, kas vyks, kokia programa ar atlikėjai..." class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm"></textarea>
             </div>
 
             <div class="flex flex-wrap gap-4 text-xs font-medium text-stone-700">
@@ -480,7 +509,7 @@
 
             <input id="adminEventSearch" type="text" oninput="renderAdminEventsList()" placeholder="Filtruoti renginius pagal pavadinimą ar vietą..." class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
 
-            <div id="adminEventsList" class="space-y-2.5 max-h-[520px] overflow-y-auto pr-1"></div>
+            <div id="adminEventsList" class="space-y-2.5 max-h-[540px] overflow-y-auto pr-1"></div>
           </div>
         </div>
 
@@ -769,10 +798,12 @@
         "id": "ev-1",
         "title": "Druskininkų kurorto šventės didysis koncertas",
         "date": "2026-11-28",
-        "time": "19:30",
+        "timeStart": "19:30",
+        "timeEnd": "22:00",
         "location": "Druskininkų pramogų aikštė",
         "category": "Koncertai ir gyva muzika",
         "price": "Nemokamas",
+        "ticketUrl": "",
         "image": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=900&q=80",
         "description": "Šventinis vakaro koncertas po atviru dangumi su gyva muzika, šviesų instaliacijomis ir kurorto svečių programa.",
         "featured": true,
@@ -784,10 +815,12 @@
         "id": "ev-2",
         "title": "Žiemos sporto ir šviesų festivalis Snow Arenoje",
         "date": "2026-11-29",
-        "time": "12:00",
+        "timeStart": "12:00",
+        "timeEnd": "20:00",
         "location": "Snow Arena, Druskininkai",
         "category": "Aktyvus laisvalaikis",
         "price": "Nuo 15 €",
+        "ticketUrl": "",
         "image": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=900&q=80",
         "description": "Slidinėjimo varžybos, vakariniai nusileidimai su šviesomis, DJ pasirodymai ir pramogos visai šeimai.",
         "featured": true,
@@ -799,10 +832,12 @@
         "id": "ev-3",
         "title": "Akustinės muzikos vakaras Vijūnėlės parke",
         "date": "2026-12-05",
-        "time": "18:00",
+        "timeStart": "18:00",
+        "timeEnd": "20:00",
         "location": "Vijūnėlės parko paviljonas",
         "category": "Koncertai ir gyva muzika",
         "price": "Nemokamas",
+        "ticketUrl": "",
         "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80",
         "description": "Jaukus akustinės gitaros ir vokalo vakaras pušyno apsuptyje su karšta žolelių arbata.",
         "featured": false,
@@ -814,10 +849,12 @@
         "id": "ev-4",
         "title": "M. K. Čiurlionio kūrybos edukacija ir paroda",
         "date": "2026-12-06",
-        "time": "14:00",
+        "timeStart": "14:00",
+        "timeEnd": "16:00",
         "location": "M. K. Čiurlionio namai-muziejus",
         "category": "Edukacijos ir parodos",
         "price": "6 €",
+        "ticketUrl": "",
         "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80",
         "description": "Kūrybinės dirbtuvės ir ekskursija po menininko gyvenimo bei kūrybos erdves Druskininkuose.",
         "featured": false,
@@ -886,7 +923,7 @@
   </script>
 
   <script>
-    const STORAGE_KEY = 'renginiai_druskininkuose_v4';
+    const STORAGE_KEY = 'renginiai_druskininkuose_v5';
     const DEFAULT_EVENT_IMG = 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80';
 
     function getEmbeddedData() {
@@ -942,6 +979,13 @@
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#039;');
+    }
+
+    function formatTimeRange(ev) {
+      const s = (ev.timeStart || ev.time || '').trim();
+      const e = (ev.timeEnd || '').trim();
+      if (s && e) return `${s}–${e}`;
+      return s || e || '';
     }
 
     function formatDateLt(dateStr) {
@@ -1192,6 +1236,7 @@
 
       grid.innerHTML = list.map(ev => {
         const imgSrc = ev.image || DEFAULT_EVENT_IMG;
+        const timeText = formatTimeRange(ev);
         return `
           <article class="bg-[#fcfbf8] rounded-2xl border border-stone-200/90 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
             <div class="relative h-52 bg-stone-200 overflow-hidden">
@@ -1203,7 +1248,7 @@
             </div>
             <div class="p-5 flex-1 flex flex-col">
               <div class="text-xs font-medium text-stone-500 mb-1.5">
-                ${escapeHtml(formatDateLt(ev.date))}${ev.time ? ', ' + escapeHtml(ev.time) : ''}
+                ${escapeHtml(formatDateLt(ev.date))}${timeText ? ' • 🕒 ' + escapeHtml(timeText) : ''}
               </div>
               <h3 class="font-display font-bold text-lg text-stone-900 leading-snug mb-2">
                 ${escapeHtml(ev.title)}
@@ -1226,6 +1271,7 @@
     function openEventDetails(id) {
       const ev = appState.events.find(item => item.id === id);
       if (!ev) return;
+      const timeText = formatTimeRange(ev);
       document.getElementById('detailsModalContent').innerHTML = `
         <div class="relative h-64 bg-stone-200">
           <img src="${escapeHtml(ev.image || DEFAULT_EVENT_IMG)}" alt="${escapeHtml(ev.title)}" class="w-full h-full object-cover" onerror="this.src='${DEFAULT_EVENT_IMG}'" />
@@ -1238,13 +1284,17 @@
           </div>
           <h3 class="font-display font-bold text-2xl text-stone-900">${escapeHtml(ev.title)}</h3>
           <div class="text-sm text-stone-600 space-y-1">
-            <div><strong>Data ir laikas:</strong> ${escapeHtml(formatDateLt(ev.date))} ${escapeHtml(ev.time || '')}</div>
+            <div><strong>Data:</strong> ${escapeHtml(formatDateLt(ev.date))}</div>
+            ${timeText ? `<div><strong>Laikas:</strong> ${escapeHtml(timeText)}</div>` : ''}
             <div><strong>Vieta:</strong> ${escapeHtml(ev.location)}</div>
           </div>
           <p class="text-stone-700 text-sm sm:text-base leading-relaxed whitespace-pre-line">${escapeHtml(ev.description)}</p>
-          <div class="pt-3 flex justify-end gap-2">
-            <button onclick="closeDetailsModal(); openAdminModal('events'); editEvent('${ev.id}');" class="px-4 py-2 rounded-xl border border-stone-300 text-xs font-semibold text-stone-700 hover:bg-stone-50">Redaguoti šį renginį</button>
-            <button onclick="closeDetailsModal()" class="px-5 py-2 rounded-xl bg-forest-800 text-white text-xs font-semibold hover:bg-forest-700">Uždaryti</button>
+          <div class="pt-3 flex flex-wrap items-center justify-between gap-2">
+            ${ev.ticketUrl ? `<a href="${escapeHtml(ev.ticketUrl)}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-amberwarm-500 hover:bg-amberwarm-600 text-white text-xs font-semibold">Bilietai / Nuoroda ↗</a>` : '<span></span>'}
+            <div class="flex gap-2">
+              <button onclick="closeDetailsModal(); openAdminModal('events'); editEvent('${ev.id}');" class="px-4 py-2 rounded-xl border border-stone-300 text-xs font-semibold text-stone-700 hover:bg-stone-50">Redaguoti šį renginį</button>
+              <button onclick="closeDetailsModal()" class="px-5 py-2 rounded-xl bg-forest-800 text-white text-xs font-semibold hover:bg-forest-700">Uždaryti</button>
+            </div>
           </div>
         </div>
       `;
@@ -1456,15 +1506,32 @@
       document.getElementById('evDate').value = d.toISOString().split('T')[0];
     }
 
+    function fillSampleEventTemplate() {
+      document.getElementById('evTitle').value = 'Vakaro koncertas kurorto parke';
+      setQuickEventDate('weekend');
+      document.getElementById('evTimeStart').value = '18:30';
+      document.getElementById('evTimeEnd').value = '20:30';
+      document.getElementById('evLocation').value = 'Druskininkų pramogų aikštė';
+      document.getElementById('evCategory').value = 'Koncertai ir gyva muzika';
+      document.getElementById('evPrice').value = 'Nemokamas';
+      document.getElementById('evImage').value = 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=900&q=80';
+      document.getElementById('evDescription').value = 'Gyva muzika, jauki vakaro atmosfera ir šventinė nuotaika Druskininkuose.';
+      document.getElementById('evFree').checked = true;
+      document.getElementById('evFamily').checked = true;
+      updateImagePreview('evImage', 'evImagePreview');
+    }
+
     function resetEventForm() {
       document.getElementById('eventFormHeading').textContent = '+ Naujas renginys';
       document.getElementById('evId').value = '';
       document.getElementById('evTitle').value = '';
       document.getElementById('evDate').value = new Date().toISOString().split('T')[0];
-      document.getElementById('evTime').value = '19:00';
+      document.getElementById('evTimeStart').value = '19:00';
+      document.getElementById('evTimeEnd').value = '21:00';
       document.getElementById('evLocation').value = '';
       document.getElementById('evCategory').value = 'Koncertai ir gyva muzika';
       document.getElementById('evPrice').value = 'Nemokamas';
+      document.getElementById('evTicketUrl').value = '';
       document.getElementById('evImage').value = '';
       document.getElementById('evDescription').value = '';
       document.getElementById('evFeatured').checked = false;
@@ -1481,10 +1548,12 @@
       document.getElementById('evId').value = ev.id;
       document.getElementById('evTitle').value = ev.title || '';
       document.getElementById('evDate').value = ev.date || '';
-      document.getElementById('evTime').value = ev.time || '';
+      document.getElementById('evTimeStart').value = ev.timeStart || ev.time || '';
+      document.getElementById('evTimeEnd').value = ev.timeEnd || '';
       document.getElementById('evLocation').value = ev.location || '';
       document.getElementById('evCategory').value = ev.category || 'Koncertai ir gyva muzika';
       document.getElementById('evPrice').value = ev.price || '';
+      document.getElementById('evTicketUrl').value = ev.ticketUrl || '';
       document.getElementById('evImage').value = ev.image || '';
       document.getElementById('evDescription').value = ev.description || '';
       document.getElementById('evFeatured').checked = Boolean(ev.featured);
@@ -1529,15 +1598,20 @@
         return;
       }
 
+      const timeStart = document.getElementById('evTimeStart').value.trim();
+      const timeEnd = document.getElementById('evTimeEnd').value.trim();
       const id = document.getElementById('evId').value;
       const payload = {
         id: id || 'ev-' + Date.now(),
         title,
         date,
-        time: document.getElementById('evTime').value.trim(),
+        timeStart,
+        timeEnd,
+        time: timeStart && timeEnd ? `${timeStart}–${timeEnd}` : (timeStart || timeEnd),
         location,
         category: document.getElementById('evCategory').value,
         price: document.getElementById('evPrice').value.trim(),
+        ticketUrl: document.getElementById('evTicketUrl').value.trim(),
         image: document.getElementById('evImage').value.trim(),
         description,
         featured: document.getElementById('evFeatured').checked,
@@ -1593,22 +1667,25 @@
         return;
       }
 
-      container.innerHTML = list.map(ev => `
-        <div class="p-3.5 rounded-xl border ${ev.hidden ? 'border-amber-300 bg-amber-50/40' : 'border-stone-200 bg-[#fcfbf8]'} flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div class="min-w-0">
-            <div class="flex items-center gap-2">
-              <span class="font-bold text-sm text-stone-900 truncate">${escapeHtml(ev.title)}</span>
-              ${ev.hidden ? '<span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 text-[10px] font-bold">Juodraštis</span>' : ''}
+      container.innerHTML = list.map(ev => {
+        const t = formatTimeRange(ev);
+        return `
+          <div class="p-3.5 rounded-xl border ${ev.hidden ? 'border-amber-300 bg-amber-50/40' : 'border-stone-200 bg-[#fcfbf8]'} flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="font-bold text-sm text-stone-900 truncate">${escapeHtml(ev.title)}</span>
+                ${ev.hidden ? '<span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 text-[10px] font-bold">Juodraštis</span>' : ''}
+              </div>
+              <div class="text-xs text-stone-500 mt-0.5">${escapeHtml(ev.date)}${t ? ' • ' + escapeHtml(t) : ''} • ${escapeHtml(ev.location)}</div>
             </div>
-            <div class="text-xs text-stone-500 mt-0.5">${escapeHtml(ev.date)} • ${escapeHtml(ev.location)}</div>
+            <div class="flex items-center gap-1.5 shrink-0 text-xs">
+              <button type="button" onclick="editEvent('${ev.id}')" class="px-2.5 py-1.5 rounded-lg bg-forest-50 text-forest-800 hover:bg-forest-100 font-semibold">Redaguoti</button>
+              <button type="button" onclick="duplicateEvent('${ev.id}')" class="px-2.5 py-1.5 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 font-medium">Dubliuoti</button>
+              <button type="button" onclick="deleteEvent('${ev.id}')" class="px-2.5 py-1.5 rounded-lg bg-red-50 text-red-700 hover:bg-red-100 font-medium">Trinti</button>
+            </div>
           </div>
-          <div class="flex items-center gap-1.5 shrink-0 text-xs">
-            <button type="button" onclick="editEvent('${ev.id}')" class="px-2.5 py-1.5 rounded-lg bg-forest-50 text-forest-800 hover:bg-forest-100 font-semibold">Redaguoti</button>
-            <button type="button" onclick="duplicateEvent('${ev.id}')" class="px-2.5 py-1.5 rounded-lg bg-stone-100 text-stone-700 hover:bg-stone-200 font-medium">Dubliuoti</button>
-            <button type="button" onclick="deleteEvent('${ev.id}')" class="px-2.5 py-1.5 rounded-lg bg-red-50 text-red-700 hover:bg-red-100 font-medium">Trinti</button>
-          </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
     // CAFES ADMIN
