@@ -146,10 +146,10 @@
     </div>
   </section>
 
-  <!-- EVENTS SECTION + INTERACTIVE MONTH CALENDAR -->
+  <!-- EVENTS SECTION + COMPACT MONTH CALENDAR WITH PHOTO & TITLE -->
   <section id="renginiai" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
     <!-- Category Pills -->
-    <div class="flex flex-wrap items-center gap-2 mb-8">
+    <div class="flex flex-wrap items-center gap-2 mb-6">
       <button onclick="setCategoryFilter('all')" data-cat="all" class="cat-btn px-4 py-2 rounded-full bg-forest-800 text-white text-sm font-semibold transition">Visi tipai</button>
       <button onclick="setCategoryFilter('Koncertai ir gyva muzika')" data-cat="Koncertai ir gyva muzika" class="cat-btn px-4 py-2 rounded-full bg-white border border-stone-200 hover:border-forest-600 text-stone-700 text-sm font-medium transition">Koncertai ir gyva muzika</button>
       <button onclick="setCategoryFilter('Šeimai ir vaikams')" data-cat="Šeimai ir vaikams" class="cat-btn px-4 py-2 rounded-full bg-white border border-stone-200 hover:border-forest-600 text-stone-700 text-sm font-medium transition">Šeimai ir vaikams</button>
@@ -158,25 +158,25 @@
       <button onclick="setCategoryFilter('Šventės ir mugės')" data-cat="Šventės ir mugės" class="cat-btn px-4 py-2 rounded-full bg-white border border-stone-200 hover:border-forest-600 text-stone-700 text-sm font-medium transition">Šventės ir mugės</button>
     </div>
 
-    <!-- Interactive Month Calendar Box -->
-    <div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-4 sm:p-6 mb-10">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-4 border-b border-stone-100">
-        <div>
-          <span class="text-[11px] font-bold uppercase tracking-wider text-forest-700">Renginių kalendorius</span>
-          <h3 id="calendarMonthTitle" class="font-display font-bold text-lg sm:text-xl text-stone-900"></h3>
+    <!-- Compact Interactive Month Calendar Box -->
+    <div class="bg-white rounded-2xl border border-stone-200 shadow-sm p-3.5 sm:p-5 mb-9">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pb-3 mb-3 border-b border-stone-100">
+        <div class="flex items-baseline gap-3">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-forest-700">Kalendorius</span>
+          <h3 id="calendarMonthTitle" class="font-display font-bold text-base sm:text-lg text-stone-900"></h3>
         </div>
-        <div class="flex items-center gap-2">
-          <button type="button" onclick="changeCalendarMonth(-1)" class="px-3 py-1.5 rounded-xl border border-stone-200 hover:bg-stone-100 text-sm font-semibold text-stone-700 transition">←</button>
-          <button type="button" onclick="jumpToCurrentMonth()" class="px-3 py-1.5 rounded-xl border border-stone-200 hover:bg-stone-100 text-xs font-semibold text-stone-700 transition">Šis mėnuo</button>
-          <button type="button" onclick="changeCalendarMonth(1)" class="px-3 py-1.5 rounded-xl border border-stone-200 hover:bg-stone-100 text-sm font-semibold text-stone-700 transition">→</button>
-          <button type="button" id="clearSelectedDateBtn" onclick="clearSelectedCalendarDate()" class="hidden px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-semibold transition">
-            Rodyti visus renginius
+        <div class="flex flex-wrap items-center gap-1.5">
+          <button type="button" onclick="changeCalendarMonth(-1)" class="px-2.5 py-1 rounded-lg border border-stone-200 hover:bg-stone-100 text-xs font-semibold text-stone-700 transition">←</button>
+          <button type="button" onclick="jumpToCurrentMonth()" class="px-2.5 py-1 rounded-lg border border-stone-200 hover:bg-stone-100 text-xs font-semibold text-stone-700 transition">Šis mėnuo</button>
+          <button type="button" onclick="changeCalendarMonth(1)" class="px-2.5 py-1 rounded-lg border border-stone-200 hover:bg-stone-100 text-xs font-semibold text-stone-700 transition">→</button>
+          <button type="button" id="clearSelectedDateBtn" onclick="clearSelectedCalendarDate()" class="hidden px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-semibold transition">
+            Rodyti visus
           </button>
         </div>
       </div>
 
       <!-- Weekdays -->
-      <div class="grid grid-cols-7 gap-1.5 text-center text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-2">
+      <div class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold uppercase tracking-wider text-stone-400 mb-1.5">
         <div>Pr</div>
         <div>An</div>
         <div>Tr</div>
@@ -187,10 +187,10 @@
       </div>
 
       <!-- Days Grid -->
-      <div id="calendarDaysGrid" class="grid grid-cols-7 gap-1.5"></div>
+      <div id="calendarDaysGrid" class="grid grid-cols-7 gap-1"></div>
 
-      <div id="calendarSelectedHint" class="mt-4 pt-3 border-t border-stone-100 text-xs text-stone-500 flex flex-wrap items-center justify-between gap-2">
-        <span>Spauskite ant dienos kalendoriuje, kad iš karto matytumėte tos datos renginius. Dienos su žyma turi suplanuotų renginių.</span>
+      <div id="calendarSelectedHint" class="mt-3 pt-2.5 border-t border-stone-100 text-[11px] text-stone-500 flex flex-wrap items-center justify-between gap-2">
+        <span>Spauskite ant dienos langelio, kad išfiltruotumėte tos dienos renginius.</span>
         <span id="calendarActiveDateBadge" class="font-semibold text-forest-800"></span>
       </div>
     </div>
@@ -246,7 +246,7 @@
           Įžvalgos iš koncertų ir muzikos atradimai
         </h2>
         <p id="insightsSectionSubtitle" class="text-sm sm:text-base text-stone-600 mt-1 max-w-2xl">
-          Asmeniniai įspūdžiai apie gyvus pasirodymus, grupes, festivalius ir koncertų erdves ne tik Druskininkuose, bet ir visoje Lietuvoje bei užsienyje.
+          Asmeniniai įspūdiai apie gyvus pasirodymus, grupes, festivalius ir koncertų erdves ne tik Druskininkuose, bet ir visoje Lietuvoje bei užsienyje.
         </p>
       </div>
 
@@ -868,6 +868,7 @@
 
   <script>
     const STORAGE_KEY = 'renginiai_druskininkuose_v4';
+    const DEFAULT_EVENT_IMG = 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80';
 
     function getEmbeddedData() {
       try {
@@ -904,7 +905,7 @@
 
     const nowDate = new Date();
     let calendarYear = nowDate.getFullYear();
-    let calendarMonth = nowDate.getMonth(); // 0..11
+    let calendarMonth = nowDate.getMonth();
 
     function saveAppState() {
       try {
@@ -967,7 +968,7 @@
       }
     }
 
-    // MONTH CALENDAR LOGIC
+    // COMPACT MONTH CALENDAR WITH PHOTO & EVENT TITLE
     function changeCalendarMonth(delta) {
       calendarMonth += delta;
       if (calendarMonth < 0) {
@@ -1007,15 +1008,15 @@
       document.getElementById('calendarMonthTitle').textContent = getMonthNameLt(calendarYear, calendarMonth);
 
       const visibleEvents = appState.events.filter(ev => !ev.hidden);
-      const countByDate = {};
+      const eventsByDate = {};
       visibleEvents.forEach(ev => {
         if (ev.date) {
-          countByDate[ev.date] = (countByDate[ev.date] || 0) + 1;
+          if (!eventsByDate[ev.date]) eventsByDate[ev.date] = [];
+          eventsByDate[ev.date].push(ev);
         }
       });
 
       const firstDayObj = new Date(calendarYear, calendarMonth, 1);
-      // Monday = 0 .. Sunday = 6
       let startOffset = firstDayObj.getDay() - 1;
       if (startOffset < 0) startOffset = 6;
 
@@ -1025,33 +1026,47 @@
       let cellsHtml = '';
 
       for (let i = 0; i < startOffset; i++) {
-        cellsHtml += `<div class="h-12 sm:h-14 rounded-xl bg-stone-50/60"></div>`;
+        cellsHtml += `<div class="h-14 sm:h-16 rounded-lg bg-stone-50/60"></div>`;
       }
 
       for (let day = 1; day <= daysInMonth; day++) {
         const isoDate = `${calendarYear}-${pad2(calendarMonth + 1)}-${pad2(day)}`;
-        const evCount = countByDate[isoDate] || 0;
+        const dayEvents = eventsByDate[isoDate] || [];
+        const hasEvents = dayEvents.length > 0;
         const isSelected = selectedCalendarDate === isoDate;
         const isToday = todayIso === isoDate;
 
-        let btnClasses = 'h-12 sm:h-14 rounded-xl border p-1.5 flex flex-col items-center justify-between transition text-xs sm:text-sm relative ';
-        if (isSelected) {
-          btnClasses += 'bg-forest-800 text-white border-forest-900 shadow-sm font-bold';
-        } else if (evCount > 0) {
-          btnClasses += 'bg-forest-50 hover:bg-forest-100 text-forest-950 border-forest-300 font-semibold';
-        } else {
-          btnClasses += 'bg-white hover:bg-stone-100 text-stone-700 border-stone-200';
-        }
+        if (hasEvents) {
+          const firstEv = dayEvents[0];
+          const bgImg = escapeHtml(firstEv.image || DEFAULT_EVENT_IMG);
+          const extraCount = dayEvents.length > 1 ? ` +${dayEvents.length - 1}` : '';
+          const ringClass = isSelected
+            ? 'ring-2 ring-amberwarm-500 border-amberwarm-500 scale-[1.01]'
+            : 'border-stone-700/40 hover:border-forest-700';
 
-        cellsHtml += `
-          <button type="button" onclick="selectCalendarDate('${isoDate}')" class="${btnClasses}">
-            <span class="${isToday && !isSelected ? 'underline decoration-2 decoration-amberwarm-500 font-extrabold' : ''}">${day}</span>
-            ${evCount > 0
-              ? `<span class="px-1.5 py-0.2 rounded-full text-[10px] leading-tight ${isSelected ? 'bg-white/20 text-white' : 'bg-amberwarm-500 text-white font-bold'}">${evCount} ${evCount === 1 ? 'reng.' : 'reng.'}</span>`
-              : `<span class="h-3"></span>`
-            }
-          </button>
-        `;
+          cellsHtml += `
+            <button type="button" onclick="selectCalendarDate('${isoDate}')" title="${escapeHtml(firstEv.title)}" class="h-14 sm:h-16 rounded-lg border ${ringClass} relative overflow-hidden p-1.5 flex flex-col justify-between text-left transition group shadow-xs">
+              <img src="${bgImg}" alt="" class="absolute inset-0 w-full h-full object-cover transition duration-300 group-hover:scale-105" onerror="this.src='${DEFAULT_EVENT_IMG}'" />
+              <div class="absolute inset-0 ${isSelected ? 'bg-forest-950/75' : 'bg-gradient-to-t from-black/85 via-black/45 to-black/25'}"></div>
+              <div class="relative z-10 flex items-center justify-between w-full">
+                <span class="text-[11px] sm:text-xs font-extrabold text-white leading-none ${isToday ? 'underline decoration-amber-400 decoration-2' : ''}">${day}</span>
+                ${isSelected ? '<span class="w-2 h-2 rounded-full bg-amber-400"></span>' : ''}
+              </div>
+              <div class="relative z-10 text-[10px] leading-tight font-semibold text-white line-clamp-2 drop-shadow-xs">
+                ${escapeHtml(firstEv.title)}${extraCount}
+              </div>
+            </button>
+          `;
+        } else {
+          const emptyClasses = isSelected
+            ? 'bg-forest-800 text-white border-forest-900 font-bold'
+            : 'bg-white hover:bg-stone-100 text-stone-600 border-stone-200';
+          cellsHtml += `
+            <button type="button" onclick="selectCalendarDate('${isoDate}')" class="h-14 sm:h-16 rounded-lg border ${emptyClasses} p-1.5 flex flex-col items-start justify-between text-xs transition">
+              <span class="${isToday && !isSelected ? 'text-forest-800 font-extrabold underline decoration-amberwarm-500 decoration-2' : 'font-medium'}">${day}</span>
+            </button>
+          `;
+        }
       }
 
       document.getElementById('calendarDaysGrid').innerHTML = cellsHtml;
@@ -1150,19 +1165,18 @@
         grid.innerHTML = `
           <div class="col-span-full bg-white rounded-2xl border border-stone-200 p-10 text-center">
             <p class="font-display font-bold text-lg text-stone-800">Pagal pasirinktą datą ar filtrus renginių nerasta</p>
-            <p class="text-sm text-stone-500 mt-1">Pabandykite pasirinkti kitą dieną kalendoriuje arba paspausti „Rodyti visus renginius“.</p>
+            <p class="text-sm text-stone-500 mt-1">Pabandykite pasirinkti kitą dieną kalendoriuje arba paspausti „Rodyti visus“.</p>
           </div>
         `;
         return;
       }
 
       grid.innerHTML = list.map(ev => {
-        const fallbackImg = 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80';
-        const imgSrc = ev.image || fallbackImg;
+        const imgSrc = ev.image || DEFAULT_EVENT_IMG;
         return `
           <article class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
             <div class="relative h-52 bg-stone-200 overflow-hidden">
-              <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(ev.title)}" class="w-full h-full object-cover" onerror="this.src='${fallbackImg}'" />
+              <img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(ev.title)}" class="w-full h-full object-cover" onerror="this.src='${DEFAULT_EVENT_IMG}'" />
               <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
                 ${ev.featured ? '<span class="px-2.5 py-1 rounded-lg bg-amberwarm-500 text-white text-xs font-bold shadow">Didysis renginys</span>' : ''}
                 ${ev.free ? '<span class="px-2.5 py-1 rounded-lg bg-forest-700 text-white text-xs font-bold shadow">Nemokamas</span>' : ''}
@@ -1193,10 +1207,9 @@
     function openEventDetails(id) {
       const ev = appState.events.find(item => item.id === id);
       if (!ev) return;
-      const fallbackImg = 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80';
       document.getElementById('detailsModalContent').innerHTML = `
         <div class="relative h-64 bg-stone-200">
-          <img src="${escapeHtml(ev.image || fallbackImg)}" alt="${escapeHtml(ev.title)}" class="w-full h-full object-cover" onerror="this.src='${fallbackImg}'" />
+          <img src="${escapeHtml(ev.image || DEFAULT_EVENT_IMG)}" alt="${escapeHtml(ev.title)}" class="w-full h-full object-cover" onerror="this.src='${DEFAULT_EVENT_IMG}'" />
           <button onclick="closeDetailsModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/60 text-white font-bold hover:bg-black/80">✕</button>
         </div>
         <div class="p-6 space-y-4">
