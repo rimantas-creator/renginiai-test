@@ -120,15 +120,15 @@
       <div class="max-w-3xl">
         <div id="heroBadgeText" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-emerald-200 text-xs font-medium mb-5">
           <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          Druskininkų kurorto gidas • Renginiai, kavinės ir muzikos užrašai
+          Druskininkų kurorto gidas • Atrinkti renginiai, kavinės ir muzikos užrašai
         </div>
 
         <h1 id="heroTitleText" class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
-          Visi renginiai ir pramogos Druskininkuose
+          Išskirtiniai renginiai ir patirtys Druskininkuose
         </h1>
 
         <p id="heroSubtitleText" class="text-base sm:text-lg text-emerald-100/90 leading-relaxed mb-8 max-w-2xl">
-          Atraskite koncertus, šventes, sanatorijų ir kavinių vakarus bei gyvos muzikos įspūdžius kurorte ir už jo ribų.
+          Atrinkti koncertai, vakarai su gyva muzika, tikri kavinių įspūdžiai ir muzikos atradimai kurorte bei už jo ribų.
         </p>
 
         <!-- Search Bar -->
@@ -147,7 +147,7 @@
         <!-- Quick Filters -->
         <div class="flex flex-wrap items-center gap-2 mt-5 text-xs sm:text-sm">
           <span class="text-emerald-200/80 mr-1">Greiti filtrai:</span>
-          <button onclick="setQuickFilter('all')" id="qf-all" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-[#fcfbf8] text-forest-900 font-semibold transition">Visi</button>
+          <button onclick="setQuickFilter('all')" id="qf-all" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-[#fcfbf8] text-forest-900 font-semibold transition">Atrinkti</button>
           <button onclick="setQuickFilter('weekend')" id="qf-weekend" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium transition">Šį savaitgalį</button>
           <button onclick="setQuickFilter('free')" id="qf-free" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium transition">Nemokami renginiai</button>
           <button onclick="setQuickFilter('featured')" id="qf-featured" class="quick-filter-btn px-3.5 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white font-medium transition">Didieji renginiai</button>
@@ -181,7 +181,7 @@
           <button type="button" onclick="jumpToCurrentMonth()" class="px-2.5 py-1 rounded-lg border border-stone-200 bg-[#f6f4ef] hover:bg-stone-200/70 text-xs font-semibold text-stone-700 transition">Šis mėnuo</button>
           <button type="button" onclick="changeCalendarMonth(1)" class="px-2.5 py-1 rounded-lg border border-stone-200 bg-[#f6f4ef] hover:bg-stone-200/70 text-xs font-semibold text-stone-700 transition">→</button>
           <button type="button" id="clearSelectedDateBtn" onclick="clearSelectedCalendarDate()" class="hidden px-2.5 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-semibold transition">
-            Rodyti visus
+            Rodyti atrinktus
           </button>
         </div>
       </div>
@@ -209,7 +209,7 @@
     <!-- Filtered Events Header -->
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
       <div>
-        <h2 id="eventsSectionHeading" class="font-display text-2xl sm:text-3xl font-bold text-stone-900">Visi renginiai</h2>
+        <h2 id="eventsSectionHeading" class="font-display text-2xl sm:text-3xl font-bold text-stone-900">Atrinkti renginiai</h2>
         <p id="eventsCounterText" class="text-sm text-stone-500 mt-1">Rodoma renginių: 0</p>
       </div>
       <div class="flex flex-wrap items-center gap-2">
@@ -236,7 +236,7 @@
         <div>
           <span class="text-xs font-bold uppercase tracking-wider text-forest-700">Kurorto skoniai ir patirtys</span>
           <h2 class="font-display text-2xl sm:text-3xl font-bold text-stone-900 mt-1">Kur pavalgyti ir praleisti vakarą</h2>
-          <p class="text-sm text-stone-600 mt-1">Rekomenduojamos kavinės, tikri įspūdžiai, nuorodos ir maršrutai.</p>
+          <p class="text-sm text-stone-600 mt-1">Rekomenduojamos kavinės, tikri įspūdžiai, patiekalų nuotraukos, meniu, nuorodos ir maršrutai.</p>
         </div>
         <div class="flex flex-wrap gap-2">
           <button onclick="openAdminModal('cafes', true)" class="px-4 py-2 rounded-xl bg-forest-800 hover:bg-forest-700 text-white text-xs sm:text-sm font-semibold transition">
@@ -266,12 +266,12 @@
             Įžvalgos iš koncertų ir muzikos atradimai
           </h2>
           <p id="insightsSectionSubtitle" class="text-sm sm:text-base text-stone-600 mt-1 max-w-2xl">
-            Asmeniniai įspūdiai apie gyvus pasirodymus, grupes, festivalius ir koncertų erdves ne tik Druskininkuose, bet ir visoje Lietuvoje bei užsienyje.
+            Asmeniniai įspūdžiai apie gyvus pasirodymus, grupes, festivalius ir koncertų erdves ne tik Druskininkuose, bet ir visoje Lietuvoje bei užsienyje.
           </p>
         </div>
 
         <div class="flex flex-wrap items-center gap-2">
-          <button onclick="setInsightScopeFilter('all')" data-scope="all" class="insight-scope-btn px-3.5 py-2 rounded-xl bg-stone-900 text-white text-xs sm:text-sm font-semibold transition">Visi įrašai</button>
+          <button onclick="setInsightScopeFilter('all')" data-scope="all" class="insight-scope-btn px-3.5 py-2 rounded-xl bg-stone-900 text-white text-xs sm:text-sm font-semibold transition">Atrinkti įrašai</button>
           <button onclick="setInsightScopeFilter('Druskininkai / Lietuva')" data-scope="Druskininkai / Lietuva" class="insight-scope-btn px-3.5 py-2 rounded-xl bg-[#fcfbf8] border border-stone-200 hover:border-stone-400 text-stone-700 text-xs sm:text-sm font-medium transition">Druskininkai / Lietuva</button>
           <button onclick="setInsightScopeFilter('Užsienis')" data-scope="Užsienis" class="insight-scope-btn px-3.5 py-2 rounded-xl bg-[#fcfbf8] border border-stone-200 hover:border-stone-400 text-stone-700 text-xs sm:text-sm font-medium transition">Užsienis</button>
           <button onclick="openAdminModal('insights', true)" class="px-3.5 py-2 rounded-xl bg-forest-800 hover:bg-forest-700 text-white text-xs sm:text-sm font-semibold transition">
@@ -350,7 +350,7 @@
     </div>
   </footer>
 
-  <!-- EVENT DETAILS MODAL -->
+  <!-- EVENT / PHOTO / MENU DETAILS MODAL -->
   <div id="detailsModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm p-4 overflow-y-auto">
     <div class="max-w-2xl mx-auto my-8 bg-[#fcfbf8] rounded-3xl shadow-2xl overflow-hidden border border-stone-200">
       <div id="detailsModalContent"></div>
@@ -568,7 +568,7 @@
             </div>
 
             <div>
-              <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Nuotrauka (URL arba failas)</label>
+              <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Kavinės nuotrauka (URL arba failas)</label>
               <div class="flex flex-col sm:flex-row gap-2">
                 <input id="cafeImage" type="text" oninput="updateImagePreview('cafeImage', 'cafeImagePreview')" placeholder="https://..." class="flex-1 px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
                 <label class="px-3 py-2 rounded-xl bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-semibold cursor-pointer text-center shrink-0">
@@ -580,16 +580,34 @@
             </div>
 
             <div>
+              <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Meniu nuotrauka arba nuoroda (URL / failas)</label>
+              <div class="flex flex-col sm:flex-row gap-2">
+                <input id="cafeMenuMedia" type="text" oninput="updateImagePreview('cafeMenuMedia', 'cafeMenuMediaPreview')" placeholder="Nuoroda į meniu arba nuotrauka" class="flex-1 px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
+                <label class="px-3 py-2 rounded-xl bg-stone-200 hover:bg-stone-300 text-stone-800 text-xs font-semibold cursor-pointer text-center shrink-0">
+                  Įkelti meniu foto
+                  <input type="file" accept="image/*" class="hidden" onchange="handleLocalImageUpload(event, 'cafeMenuMedia', 'cafeMenuMediaPreview')" />
+                </label>
+                <button type="button" onclick="clearCafeMenuMedia()" class="px-2.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-600 text-xs font-semibold shrink-0">✕</button>
+              </div>
+              <img id="cafeMenuMediaPreview" src="" alt="Meniu peržiūra" class="hidden mt-2 h-24 w-full object-cover rounded-xl border border-stone-200" />
+            </div>
+
+            <div>
               <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Patirtis / Kuo ypatinga ši kavinė</label>
               <textarea id="cafeDescription" rows="2" placeholder="Pasidalinkite įspūdžiu apie vietą, kavą, maistą ar vakaro nuotaiką..." class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm"></textarea>
             </div>
 
-            <div class="border-t border-stone-200 pt-3 space-y-2">
-              <div class="flex items-center justify-between">
-                <label class="text-xs font-bold uppercase text-stone-700">Rekomenduojami patiekalai / meniu</label>
-                <button type="button" onclick="addMenuItemRow()" class="px-2.5 py-1 rounded-lg bg-forest-100 text-forest-800 text-xs font-semibold hover:bg-forest-200">+ Pridėti patiekalą</button>
+            <div class="border-t border-stone-200 pt-3 space-y-2.5">
+              <div>
+                <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Meniu / nuotraukų skilties antraštė (galima keisti)</label>
+                <input id="cafeMenuHeading" type="text" placeholder="Rekomenduojama iš meniu" class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm" />
               </div>
-              <div id="cafeMenuEditorList" class="space-y-2"></div>
+
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold uppercase text-stone-700">Patiekalai / įrašai su foto</label>
+                <button type="button" onclick="addMenuItemRow()" class="px-2.5 py-1 rounded-lg bg-forest-100 text-forest-800 text-xs font-semibold hover:bg-forest-200">+ Pridėti eilutę</button>
+              </div>
+              <div id="cafeMenuEditorList" class="space-y-2.5"></div>
             </div>
 
             <button type="button" onclick="saveCafe()" class="w-full py-3 rounded-xl bg-forest-800 hover:bg-forest-700 text-white font-semibold text-sm transition shadow">
@@ -599,7 +617,7 @@
 
           <div class="lg:col-span-6 space-y-3">
             <h3 class="font-display font-bold text-base text-stone-900">Esamos kavinės (<span id="adminCafesCount">0</span>)</h3>
-            <div id="adminCafesList" class="space-y-2.5 max-h-[560px] overflow-y-auto pr-1"></div>
+            <div id="adminCafesList" class="space-y-2.5 max-h-[580px] overflow-y-auto pr-1"></div>
           </div>
         </div>
 
@@ -791,7 +809,7 @@
             <ul class="list-disc pl-5 space-y-1">
               <li>Failas visada turi vadintis tiksliai <strong>index.html</strong> (mažosiomis raidėmis, su vienu tašku).</li>
               <li>Įkėlus į GitHub, puslapis atsinaujina per 1–2 minutes (naršyklėje paspauskite <code>Ctrl + F5</code>).</li>
-              <li>Kai perkelsite į <strong>iv.lt</strong> hostingą, tiesiog įkelkite šį patį <code>index.html</code> į <code>public_html</code> katalogą.</li>
+              <li>Kai perkelsite į <strong>iv.lt</strong> hostingą, tiesiog įkelkite šį patį <code>index.html</code> į tinkamą svetainės katalogą.</li>
             </ul>
           </div>
         </div>
@@ -898,11 +916,13 @@
         "hours": "I–VII 11:00–23:00",
         "website": "",
         "mapUrl": "",
+        "menuHeading": "Rekomenduojama iš meniu",
+        "menuMedia": "",
         "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
         "description": "Jaukus restoranas prie Nemuno su tradiciniais dzūkiškais patiekalais ir vakarais su gyva muzika.",
         "menu": [
-          { "name": "Dzūkiškos bandos su grybų padažu", "price": "11.50 €", "desc": "Keptos krosnyje su baravykų padažu" },
-          { "name": "Antienos krūtinėlė su bruknių glajumi", "price": "17.90 €", "desc": "Patiekiama su keptomis daržovėmis" }
+          { "name": "Dzūkiškos bandos su grybų padažu", "price": "11.50 €", "desc": "Keptos krosnyje su baravykų padažu", "image": "" },
+          { "name": "Antienos krūtinėlė su bruknių glajumi", "price": "17.90 €", "desc": "Patiekiama su keptomis daržovėmis", "image": "" }
         ]
       },
       {
@@ -913,11 +933,13 @@
         "hours": "I–VII 08:00–20:00",
         "website": "",
         "mapUrl": "",
+        "menuHeading": "Rekomenduojama iš meniu",
+        "menuMedia": "",
         "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80",
         "description": "Švieži prancūziški kruasanai, rūšinė kava ir lėti pusryčiai pėsčiųjų alėjoje.",
         "menu": [
-          { "name": "Migdolinis kruasanas ir kapučino", "price": "6.50 €", "desc": "Šviežiai keptas ryte" },
-          { "name": "Benedikto kiaušiniai su lašiša", "price": "10.90 €", "desc": "Ant naminės brioche bandelės" }
+          { "name": "Migdolinis kruasanas ir kapučino", "price": "6.50 €", "desc": "Šviežiai keptas ryte", "image": "" },
+          { "name": "Benedikto kiaušiniai su lašiša", "price": "10.90 €", "desc": "Ant naminės brioche bandelės", "image": "" }
         ]
       }
     ],
@@ -953,8 +975,9 @@
   </script>
 
   <script>
-    const STORAGE_KEY = 'renginiai_druskininkuose_v6';
+    const STORAGE_KEY = 'renginiai_druskininkuose_v7';
     const DEFAULT_EVENT_IMG = 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80';
+    const DEFAULT_CAFE_IMG = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80';
 
     function getEmbeddedData() {
       try {
@@ -968,7 +991,7 @@
     function loadAppState() {
       const embedded = getEmbeddedData();
       try {
-        const saved = localStorage.getItem(STORAGE_KEY);
+        const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('renginiai_druskininkuose_v6');
         if (saved) {
           const parsed = JSON.parse(saved);
           return {
@@ -1014,8 +1037,16 @@
     function normalizeUrl(url) {
       const trimmed = (url || '').trim();
       if (!trimmed) return '';
+      if (/^data:image\//i.test(trimmed)) return trimmed;
       if (/^https?:\/\//i.test(trimmed)) return trimmed;
       return 'https://' + trimmed;
+    }
+
+    function isImageDataOrUrl(str) {
+      const s = (str || '').trim();
+      if (!s) return false;
+      if (/^data:image\//i.test(s)) return true;
+      return /\.(jpe?g|png|gif|webp)(\?.*)?$/i.test(s);
     }
 
     function buildNavigationLink(customMapUrl, addressOrLocation) {
@@ -1231,7 +1262,7 @@
         list = list.filter(ev => ev.date === selectedCalendarDate);
         document.getElementById('eventsSectionHeading').textContent = `Renginiai: ${selectedCalendarDate}`;
       } else {
-        document.getElementById('eventsSectionHeading').textContent = 'Visi renginiai';
+        document.getElementById('eventsSectionHeading').textContent = 'Atrinkti renginiai';
       }
 
       if (currentCategory !== 'all') {
@@ -1274,7 +1305,7 @@
         grid.innerHTML = `
           <div class="col-span-full bg-[#fcfbf8] rounded-2xl border border-stone-200 p-10 text-center">
             <p class="font-display font-bold text-lg text-stone-800">Pagal pasirinktą datą ar filtrus renginių nerasta</p>
-            <p class="text-sm text-stone-500 mt-1">Pabandykite pasirinkti kitą dieną kalendoriuje arba paspausti „Rodyti visus“.</p>
+            <p class="text-sm text-stone-500 mt-1">Pabandykite pasirinkti kitą dieną kalendoriuje arba paspausti „Rodyti atrinktus“.</p>
           </div>
         `;
         return;
@@ -1362,13 +1393,39 @@
       document.getElementById('detailsModal').classList.remove('hidden');
     }
 
+    function openImageLightbox(src, titleText = 'Nuotrauka') {
+      if (!src) return;
+      document.getElementById('detailsModalContent').innerHTML = `
+        <div class="relative bg-stone-950 flex items-center justify-center">
+          <img src="${escapeHtml(src)}" alt="${escapeHtml(titleText)}" class="max-h-[75vh] w-full object-contain" />
+          <button onclick="closeDetailsModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/70 text-white font-bold hover:bg-black">✕</button>
+        </div>
+        <div class="p-4 flex items-center justify-between gap-3">
+          <div class="font-display font-bold text-sm text-stone-900">${escapeHtml(titleText)}</div>
+          <button onclick="closeDetailsModal()" class="px-4 py-2 rounded-xl bg-forest-800 text-white text-xs font-semibold hover:bg-forest-700">Uždaryti</button>
+        </div>
+      `;
+      document.getElementById('detailsModal').classList.remove('hidden');
+    }
+
+    function openCafeMenuAction(cafeId) {
+      const cafe = appState.cafes.find(c => c.id === cafeId);
+      if (!cafe || !cafe.menuMedia) return;
+      const raw = cafe.menuMedia.trim();
+      if (isImageDataOrUrl(raw)) {
+        openImageLightbox(raw, `${cafe.name} – meniu`);
+      } else {
+        const url = normalizeUrl(raw);
+        if (url) window.open(url, '_blank', 'noopener,noreferrer');
+      }
+    }
+
     function closeDetailsModal() {
       document.getElementById('detailsModal').classList.add('hidden');
     }
 
     function renderCafes() {
       const grid = document.getElementById('cafesGrid');
-      const fallbackImg = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80';
       if (!appState.cafes.length) {
         grid.innerHTML = `<div class="col-span-full text-center text-sm text-stone-500 py-8">Kavinių sąrašas kol kas tuščias.</div>`;
         return;
@@ -1377,21 +1434,33 @@
       grid.innerHTML = appState.cafes.map(cafe => {
         const websiteLink = normalizeUrl(cafe.website);
         const navLink = buildNavigationLink(cafe.mapUrl, cafe.address || cafe.name);
+        const sectionHeading = (cafe.menuHeading && cafe.menuHeading.trim()) ? cafe.menuHeading.trim() : 'Rekomenduojama iš meniu';
+        const hasMenuMedia = Boolean((cafe.menuMedia || '').trim());
 
-        const menuHtml = (cafe.menu || []).map(m => `
-          <li class="flex items-start justify-between gap-2 text-xs py-1.5 border-b border-stone-200/60 last:border-0">
-            <div>
-              <span class="font-semibold text-stone-800">${escapeHtml(m.name)}</span>
-              ${m.desc ? `<div class="text-stone-500">${escapeHtml(m.desc)}</div>` : ''}
-            </div>
-            <span class="font-bold text-forest-800 shrink-0">${escapeHtml(m.price)}</span>
-          </li>
-        `).join('');
+        const menuHtml = (cafe.menu || []).map(m => {
+          const dishImg = (m.image || '').trim();
+          return `
+            <li class="flex items-start justify-between gap-2.5 text-xs py-2 border-b border-stone-200/60 last:border-0">
+              <div class="flex items-start gap-2.5 min-w-0">
+                ${dishImg ? `
+                  <button type="button" onclick="openImageLightbox('${escapeHtml(dishImg)}', '${escapeHtml(m.name)}')" class="w-11 h-11 rounded-lg overflow-hidden bg-stone-200 shrink-0 border border-stone-300/60 hover:opacity-90 transition" title="Padidinti nuotrauką">
+                    <img src="${escapeHtml(dishImg)}" alt="${escapeHtml(m.name)}" class="w-full h-full object-cover" onerror="this.parentElement.style.display='none'" />
+                  </button>
+                ` : ''}
+                <div class="min-w-0">
+                  <span class="font-semibold text-stone-800">${escapeHtml(m.name)}</span>
+                  ${m.desc ? `<div class="text-stone-500 mt-0.5">${escapeHtml(m.desc)}</div>` : ''}
+                </div>
+              </div>
+              ${m.price ? `<span class="font-bold text-forest-800 shrink-0">${escapeHtml(m.price)}</span>` : ''}
+            </li>
+          `;
+        }).join('');
 
         return `
           <div class="bg-[#fcfbf8] rounded-2xl border border-stone-200/90 overflow-hidden shadow-sm flex flex-col">
             <div class="h-44 bg-stone-200 relative">
-              <img src="${escapeHtml(cafe.image || fallbackImg)}" alt="${escapeHtml(cafe.name)}" class="w-full h-full object-cover" onerror="this.src='${fallbackImg}'" />
+              <img src="${escapeHtml(cafe.image || DEFAULT_CAFE_IMG)}" alt="${escapeHtml(cafe.name)}" class="w-full h-full object-cover" onerror="this.src='${DEFAULT_CAFE_IMG}'" />
               ${cafe.tag ? `<span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-lg bg-black/65 text-white text-xs font-medium">${escapeHtml(cafe.tag)}</span>` : ''}
             </div>
             <div class="p-5 flex-1 flex flex-col">
@@ -1403,7 +1472,7 @@
               <p class="text-sm text-stone-600 mt-3 mb-4">${escapeHtml(cafe.description)}</p>
               ${menuHtml ? `
                 <div class="mb-4 bg-[#f3f0e8] rounded-xl p-3 border border-stone-200/70">
-                  <div class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-1">Rekomenduojama iš meniu</div>
+                  <div class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-1">${escapeHtml(sectionHeading)}</div>
                   <ul>${menuHtml}</ul>
                 </div>
               ` : ''}
@@ -1411,6 +1480,7 @@
                 <div class="flex flex-wrap items-center gap-1.5">
                   ${navLink ? `<a href="${escapeHtml(navLink)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-white font-semibold transition">Navigacija 📍</a>` : ''}
                   ${websiteLink ? `<a href="${escapeHtml(websiteLink)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-amber-100/90 hover:bg-amber-200 text-amber-950 font-semibold transition">Puslapis ↗</a>` : ''}
+                  ${hasMenuMedia ? `<button type="button" onclick="openCafeMenuAction('${cafe.id}')" class="px-3 py-1.5 rounded-lg bg-stone-200/80 hover:bg-stone-300 text-stone-800 font-semibold transition">Meniu 📋</button>` : ''}
                 </div>
                 <button onclick="openAdminModal('cafes'); editCafe('${cafe.id}');" class="text-stone-500 hover:text-stone-800 font-medium">Redaguoti</button>
               </div>
@@ -1528,7 +1598,7 @@
     function updateImagePreview(inputId, previewId) {
       const val = document.getElementById(inputId).value.trim();
       const img = document.getElementById(previewId);
-      if (val) {
+      if (val && isImageDataOrUrl(val)) {
         img.src = val;
         img.classList.remove('hidden');
       } else {
@@ -1765,17 +1835,56 @@
     }
 
     // CAFES ADMIN
-    function addMenuItemRow(item = { name: '', price: '', desc: '' }) {
+    function clearCafeMenuMedia() {
+      document.getElementById('cafeMenuMedia').value = '';
+      updateImagePreview('cafeMenuMedia', 'cafeMenuMediaPreview');
+    }
+
+    function addMenuItemRow(item = { name: '', price: '', desc: '', image: '' }) {
       const container = document.getElementById('cafeMenuEditorList');
+      const rowId = 'menu-row-' + Date.now() + '-' + Math.floor(Math.random() * 10000);
       const row = document.createElement('div');
-      row.className = 'menu-editor-row grid grid-cols-12 gap-1.5 items-center bg-[#fcfbf8] p-2 rounded-xl border border-stone-200';
+      row.id = rowId;
+      row.className = 'menu-editor-row bg-[#fcfbf8] p-2.5 rounded-xl border border-stone-200 space-y-2';
       row.innerHTML = `
-        <input type="text" placeholder="Patiekalas" value="${escapeHtml(item.name)}" class="menu-name col-span-5 px-2 py-1.5 rounded-lg border border-stone-200 text-xs" />
-        <input type="text" placeholder="Kaina" value="${escapeHtml(item.price)}" class="menu-price col-span-2 px-2 py-1.5 rounded-lg border border-stone-200 text-xs" />
-        <input type="text" placeholder="Trumpas aprašymas" value="${escapeHtml(item.desc || '')}" class="menu-desc col-span-4 px-2 py-1.5 rounded-lg border border-stone-200 text-xs" />
-        <button type="button" onclick="this.parentElement.remove()" class="col-span-1 text-red-600 hover:text-red-800 font-bold text-xs text-center">✕</button>
+        <div class="grid grid-cols-12 gap-1.5 items-center">
+          <input type="text" placeholder="Patiekalas / įrašas" value="${escapeHtml(item.name)}" class="menu-name col-span-6 px-2 py-1.5 rounded-lg border border-stone-200 text-xs" />
+          <input type="text" placeholder="Kaina" value="${escapeHtml(item.price)}" class="menu-price col-span-2 px-2 py-1.5 rounded-lg border border-stone-200 text-xs" />
+          <input type="text" placeholder="Trumpas aprašymas" value="${escapeHtml(item.desc || '')}" class="menu-desc col-span-3 px-2 py-1.5 rounded-lg border border-stone-200 text-xs" />
+          <button type="button" onclick="this.closest('.menu-editor-row').remove()" class="col-span-1 text-red-600 hover:text-red-800 font-bold text-xs text-center">✕</button>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <input type="text" placeholder="Patiekalo / įrašo foto URL (nebūtina)" value="${escapeHtml(item.image || '')}" class="menu-image flex-1 px-2 py-1 rounded-lg border border-stone-200 text-[11px] text-stone-600" />
+          <label class="px-2.5 py-1 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-800 text-[11px] font-semibold cursor-pointer shrink-0">
+            Foto
+            <input type="file" accept="image/*" class="hidden" onchange="handleMenuRowImageUpload(event, '${rowId}')" />
+          </label>
+        </div>
       `;
       container.appendChild(row);
+    }
+
+    function handleMenuRowImageUpload(event, rowId) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const row = document.getElementById(rowId);
+      if (!row) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const tempImg = new Image();
+        tempImg.onload = function() {
+          const canvas = document.createElement('canvas');
+          const maxW = 700;
+          const scale = tempImg.width > maxW ? maxW / tempImg.width : 1;
+          canvas.width = tempImg.width * scale;
+          canvas.height = tempImg.height * scale;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(tempImg, 0, 0, canvas.width, canvas.height);
+          row.querySelector('.menu-image').value = canvas.toDataURL('image/jpeg', 0.8);
+        };
+        tempImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
     }
 
     function resetCafeForm() {
@@ -1788,8 +1897,11 @@
       document.getElementById('cafeWebsite').value = '';
       document.getElementById('cafeMapUrl').value = '';
       document.getElementById('cafeImage').value = '';
+      document.getElementById('cafeMenuMedia').value = '';
+      document.getElementById('cafeMenuHeading').value = 'Rekomenduojama iš meniu';
       document.getElementById('cafeDescription').value = '';
       updateImagePreview('cafeImage', 'cafeImagePreview');
+      updateImagePreview('cafeMenuMedia', 'cafeMenuMediaPreview');
       const menuList = document.getElementById('cafeMenuEditorList');
       menuList.innerHTML = '';
       addMenuItemRow();
@@ -1807,8 +1919,11 @@
       document.getElementById('cafeWebsite').value = cafe.website || '';
       document.getElementById('cafeMapUrl').value = cafe.mapUrl || '';
       document.getElementById('cafeImage').value = cafe.image || '';
+      document.getElementById('cafeMenuMedia').value = cafe.menuMedia || '';
+      document.getElementById('cafeMenuHeading').value = cafe.menuHeading || 'Rekomenduojama iš meniu';
       document.getElementById('cafeDescription').value = cafe.description || '';
       updateImagePreview('cafeImage', 'cafeImagePreview');
+      updateImagePreview('cafeMenuMedia', 'cafeMenuMediaPreview');
 
       const menuList = document.getElementById('cafeMenuEditorList');
       menuList.innerHTML = '';
@@ -1853,7 +1968,10 @@
         const mName = row.querySelector('.menu-name').value.trim();
         const mPrice = row.querySelector('.menu-price').value.trim();
         const mDesc = row.querySelector('.menu-desc').value.trim();
-        if (mName) menu.push({ name: mName, price: mPrice, desc: mDesc });
+        const mImage = row.querySelector('.menu-image').value.trim();
+        if (mName || mImage) {
+          menu.push({ name: mName || 'Nuotrauka', price: mPrice, desc: mDesc, image: mImage });
+        }
       });
 
       const id = document.getElementById('cafeId').value;
@@ -1866,6 +1984,8 @@
         website: document.getElementById('cafeWebsite').value.trim(),
         mapUrl: document.getElementById('cafeMapUrl').value.trim(),
         image: document.getElementById('cafeImage').value.trim(),
+        menuMedia: document.getElementById('cafeMenuMedia').value.trim(),
+        menuHeading: document.getElementById('cafeMenuHeading').value.trim() || 'Rekomenduojama iš meniu',
         description: document.getElementById('cafeDescription').value.trim(),
         menu
       };
@@ -1890,7 +2010,7 @@
         <div class="p-3.5 rounded-xl border border-stone-200 bg-[#fcfbf8] flex items-center justify-between gap-3">
           <div class="min-w-0">
             <div class="font-bold text-sm text-stone-900 truncate">${escapeHtml(cafe.name)}</div>
-            <div class="text-xs text-stone-500">${escapeHtml(cafe.address || '')}${cafe.website ? ' • 🔗 Nuoroda' : ''} • Patiekalų: ${(cafe.menu || []).length}</div>
+            <div class="text-xs text-stone-500">${escapeHtml(cafe.address || '')}${cafe.website ? ' • 🔗 Nuoroda' : ''}${cafe.menuMedia ? ' • 📋 Meniu' : ''} • Eilučių: ${(cafe.menu || []).length}</div>
           </div>
           <div class="flex items-center gap-1.5 shrink-0 text-xs">
             <button type="button" onclick="editCafe('${cafe.id}')" class="px-2.5 py-1.5 rounded-lg bg-forest-50 text-forest-800 hover:bg-forest-100 font-semibold">Redaguoti</button>
@@ -2124,6 +2244,7 @@
     function resetAllToDefaults() {
       if (!confirm('Ar tikrai norite išvalyti visus naršyklėje išsaugotus pakeitimus ir atstatyti pradinius duomenis?')) return;
       localStorage.removeItem(STORAGE_KEY);
+      localStorage.removeItem('renginiai_druskininkuose_v6');
       appState = getEmbeddedData();
       selectedCalendarDate = '';
       initPage();
