@@ -339,6 +339,7 @@
         <div>
           <div id="footerBrandText" class="font-display font-bold text-white text-base">RenginiaiDruskininkuose.lt</div>
           <p id="footerContactText" class="text-xs text-stone-400 mt-1">Kurorto renginių, kavinių ir gyvos muzikos įžvalgų gidas • info@renginiaidruskininkuose.lt</p>
+          <p id="footerLastUpdated" class="text-[11px] text-stone-500 mt-1"></p>
         </div>
         <div class="flex flex-wrap items-center gap-4 text-xs">
           <a href="#renginiai" class="hover:text-white transition">Renginiai</a>
@@ -479,6 +480,14 @@
               <img id="evImagePreview" src="" alt="Peržiūra" class="hidden mt-2 h-28 w-full object-cover rounded-xl border border-stone-200" />
             </div>
 
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold uppercase text-stone-600">Papildomos galerijos nuotraukos</label>
+                <button type="button" onclick="addGalleryRow('evGalleryEditor')" class="px-2 py-0.5 rounded bg-forest-100 text-forest-800 text-xs font-semibold hover:bg-forest-200">+ Pridėti foto</button>
+              </div>
+              <div id="evGalleryEditor" class="space-y-1.5"></div>
+            </div>
+
             <div>
               <label class="block text-xs font-bold uppercase text-stone-600 mb-1">Aprašymas *</label>
               <textarea id="evDescription" rows="3" placeholder="Trumpai aprašykite, kas vyks, kokia programa ar atlikėjai..." class="w-full px-3 py-2 rounded-xl border border-stone-300 bg-[#fcfbf8] text-sm"></textarea>
@@ -577,6 +586,14 @@
                 </label>
               </div>
               <img id="cafeImagePreview" src="" alt="Peržiūra" class="hidden mt-2 h-28 w-full object-cover rounded-xl border border-stone-200" />
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold uppercase text-stone-600">Papildomos galerijos nuotraukos</label>
+                <button type="button" onclick="addGalleryRow('cafeGalleryEditor')" class="px-2 py-0.5 rounded bg-forest-100 text-forest-800 text-xs font-semibold hover:bg-forest-200">+ Pridėti foto</button>
+              </div>
+              <div id="cafeGalleryEditor" class="space-y-1.5"></div>
             </div>
 
             <div>
@@ -681,6 +698,14 @@
                 </label>
               </div>
               <img id="insImagePreview" src="" alt="Peržiūra" class="hidden mt-2 h-28 w-full object-cover rounded-xl border border-stone-200" />
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold uppercase text-stone-600">Papildomos galerijos nuotraukos</label>
+                <button type="button" onclick="addGalleryRow('insGalleryEditor')" class="px-2 py-0.5 rounded bg-forest-100 text-forest-800 text-xs font-semibold hover:bg-forest-200">+ Pridėti foto</button>
+              </div>
+              <div id="insGalleryEditor" class="space-y-1.5"></div>
             </div>
 
             <div>
@@ -821,6 +846,7 @@
   <!-- INITIAL EMBEDDED DATA -->
   <script id="embedded-site-data" type="application/json">
   {
+    "lastUpdated": "2026-11-22",
     "settings": {
       "siteTitle": "RenginiaiDruskininkuose.lt",
       "siteSubtitle": "Kurorto renginių, kavinių ir gyvos muzikos gidas",
@@ -846,6 +872,7 @@
         "ticketUrl": "",
         "mapUrl": "",
         "image": "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=900&q=80",
+        "gallery": [],
         "description": "Šventinis vakaro koncertas po atviru dangumi su gyva muzika, šviesų instaliacijomis ir kurorto svečių programa.",
         "featured": true,
         "free": true,
@@ -864,6 +891,7 @@
         "ticketUrl": "",
         "mapUrl": "",
         "image": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=900&q=80",
+        "gallery": [],
         "description": "Slidinėjimo varžybos, vakariniai nusileidimai su šviesomis, DJ pasirodymai ir pramogos visai šeimai.",
         "featured": true,
         "free": false,
@@ -882,6 +910,7 @@
         "ticketUrl": "",
         "mapUrl": "",
         "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=900&q=80",
+        "gallery": [],
         "description": "Jaukus akustinės gitaros ir vokalo vakaras pušyno apsuptyje su karšta žolelių arbata.",
         "featured": false,
         "free": true,
@@ -900,6 +929,7 @@
         "ticketUrl": "",
         "mapUrl": "",
         "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80",
+        "gallery": [],
         "description": "Kūrybinės dirbtuvės ir ekskursija po menininko gyvenimo bei kūrybos erdves Druskininkuose.",
         "featured": false,
         "free": false,
@@ -918,6 +948,7 @@
         "mapUrl": "",
         "menuHeading": "Rekomenduojama iš meniu",
         "menuMedia": "",
+        "gallery": [],
         "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
         "description": "Jaukus restoranas prie Nemuno su tradiciniais dzūkiškais patiekalais ir vakarais su gyva muzika.",
         "menu": [
@@ -935,6 +966,7 @@
         "mapUrl": "",
         "menuHeading": "Rekomenduojama iš meniu",
         "menuMedia": "",
+        "gallery": [],
         "image": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80",
         "description": "Švieži prancūziški kruasanai, rūšinė kava ir lėti pusryčiai pėsčiųjų alėjoje.",
         "menu": [
@@ -953,6 +985,7 @@
         "date": "2026-10-18",
         "genre": "Post-metal / Atmosferinis",
         "musicUrl": "https://www.youtube.com/watch?v=9u4P6432k_E",
+        "gallery": [],
         "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=900&q=80",
         "body": "Retai pasitaiko koncertas, kuriame per tylesnes pauzes salėje girdisi kiekvienas įkvėpimas, o po akimirkos visa erdvė sudreba nuo žemų dažnių. Vizualizacijos ir apšvietimas sukūrė visiško įsitraukimo būseną nuo pirmos iki paskutinės minutės.",
         "hidden": false
@@ -966,6 +999,7 @@
         "date": "2026-11-08",
         "genre": "Akustika / Alternatyva",
         "musicUrl": "",
+        "gallery": [],
         "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80",
         "body": "Mažose salėse tarp atlikėjo ir klausytojo nelieka jokio barjero. Girdi tikrą instrumento skambesį be perteklinio triukšmo, o po koncerto visada lieka jausmas, kad buvai tikro pokalbio dalyvis.",
         "hidden": false
@@ -975,7 +1009,7 @@
   </script>
 
   <script>
-    const STORAGE_KEY = 'renginiai_druskininkuose_v7';
+    const STORAGE_KEY = 'renginiai_druskininkuose_v8';
     const DEFAULT_EVENT_IMG = 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80';
     const DEFAULT_CAFE_IMG = 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80';
 
@@ -984,17 +1018,18 @@
         const raw = document.getElementById('embedded-site-data').textContent;
         return JSON.parse(raw);
       } catch (e) {
-        return { settings: {}, events: [], cafes: [], insights: [] };
+        return { lastUpdated: '', settings: {}, events: [], cafes: [], insights: [] };
       }
     }
 
     function loadAppState() {
       const embedded = getEmbeddedData();
       try {
-        const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('renginiai_druskininkuose_v6');
+        const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('renginiai_druskininkuose_v7');
         if (saved) {
           const parsed = JSON.parse(saved);
           return {
+            lastUpdated: parsed.lastUpdated || embedded.lastUpdated || '',
             settings: { ...embedded.settings, ...(parsed.settings || {}) },
             events: Array.isArray(parsed.events) ? parsed.events : embedded.events,
             cafes: Array.isArray(parsed.cafes) ? parsed.cafes : embedded.cafes,
@@ -1017,10 +1052,19 @@
     let calendarMonth = nowDate.getMonth();
 
     function saveAppState() {
+      appState.lastUpdated = new Date().toISOString().split('T')[0];
+      renderLastUpdatedLabel();
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
       } catch (e) {
         alert('Dėmesio: naršyklės atmintis pilna. Rekomenduojame naudoti nuotraukų nuorodas (URL) arba atsisiųsti index.html.');
+      }
+    }
+
+    function renderLastUpdatedLabel() {
+      const el = document.getElementById('footerLastUpdated');
+      if (el) {
+        el.textContent = appState.lastUpdated ? `Atnaujinta: ${appState.lastUpdated}` : '';
       }
     }
 
@@ -1083,11 +1127,96 @@
       return n < 10 ? '0' + n : '' + n;
     }
 
-    function extractYoutubeEmbed(url) {
+    function extractYoutubeId(url) {
       if (!url) return '';
       const regExp = /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
       const match = url.match(regExp);
-      return match ? `https://www.youtube.com/embed/${match[1]}` : url;
+      return match ? match[1] : '';
+    }
+
+    function extractYoutubeEmbed(url) {
+      const vid = extractYoutubeId(url);
+      return vid ? `https://www.youtube.com/embed/${vid}` : url;
+    }
+
+    function renderGalleryStrip(images, titlePrefix) {
+      const list = (images || []).map(u => (u || '').trim()).filter(Boolean);
+      if (!list.length) return '';
+      return `
+        <div class="flex items-center gap-1.5 mt-2.5 overflow-x-auto pb-1">
+          ${list.map((src, i) => `
+            <button type="button" onclick="openImageLightbox('${escapeHtml(src)}', '${escapeHtml(titlePrefix)} (${i + 1})')" class="w-12 h-12 rounded-lg overflow-hidden bg-stone-200 shrink-0 border border-stone-300/70 hover:opacity-90 transition" title="Atidaryti nuotrauką">
+              <img src="${escapeHtml(src)}" alt="" class="w-full h-full object-cover" onerror="this.parentElement.style.display='none'" />
+            </button>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function downloadEventIcs(evId) {
+      const ev = appState.events.find(item => item.id === evId);
+      if (!ev || !ev.date) return;
+
+      const cleanDate = ev.date.replace(/-/g, '');
+      const startParts = (ev.timeStart || '19:00').split(':');
+      const startHhMm = `${pad2(parseInt(startParts[0] || '19', 10))}${pad2(parseInt(startParts[1] || '0', 10))}00`;
+
+      let endDateStr = cleanDate;
+      let endHhMm = '';
+      if (ev.timeEnd) {
+        const endParts = ev.timeEnd.split(':');
+        endHhMm = `${pad2(parseInt(endParts[0] || '21', 10))}${pad2(parseInt(endParts[1] || '0', 10))}00`;
+        if (endHhMm <= startHhMm) {
+          const nextD = new Date(ev.date + 'T12:00:00');
+          nextD.setDate(nextD.getDate() + 1);
+          endDateStr = nextD.toISOString().split('T')[0].replace(/-/g, '');
+        }
+      } else {
+        const endHour = (parseInt(startParts[0] || '19', 10) + 2) % 24;
+        endHhMm = `${pad2(endHour)}${pad2(parseInt(startParts[1] || '0', 10))}00`;
+      }
+
+      const escIcs = (txt) => (txt || '')
+        .replace(/\\/g, '\\\\')
+        .replace(/\n/g, '\\n')
+        .replace(/,/g, '\\,')
+        .replace(/;/g, '\\;');
+
+      const icsContent = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//RenginiaiDruskininkuose.lt//LT',
+        'BEGIN:VEVENT',
+        `UID:${ev.id}@renginiaidruskininkuose.lt`,
+        `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
+        `DTSTART:${cleanDate}T${startHhMm}`,
+        `DTEND:${endDateStr}T${endHhMm}`,
+        `SUMMARY:${escIcs(ev.title)}`,
+        `LOCATION:${escIcs(ev.location)}`,
+        `DESCRIPTION:${escIcs(ev.description || '')}`,
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${ev.id}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function copyShareLink(btnEl) {
+      const shareUrl = window.location.href;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        if (!btnEl) return;
+        const orig = btnEl.textContent;
+        btnEl.textContent = 'Nukopijuota ✓';
+        setTimeout(() => { btnEl.textContent = orig; }, 1600);
+      }).catch(() => {});
     }
 
     function renderSettings() {
@@ -1102,6 +1231,7 @@
       document.getElementById('footerContactText').textContent = s.footerContact || '';
       document.getElementById('vipTitleText').textContent = s.vipTitle || '';
       document.getElementById('vipDescText').textContent = s.vipDesc || '';
+      renderLastUpdatedLabel();
       const embedUrl = extractYoutubeEmbed(s.vipUrl);
       if (embedUrl) {
         document.getElementById('vipYoutubeIframe').src = embedUrl;
@@ -1316,6 +1446,7 @@
         const timeText = formatTimeRange(ev);
         const navLink = buildNavigationLink(ev.mapUrl, ev.location);
         const eventLink = normalizeUrl(ev.ticketUrl);
+        const galleryStrip = renderGalleryStrip(ev.gallery, ev.title);
 
         return `
           <article class="bg-[#fcfbf8] rounded-2xl border border-stone-200/90 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
@@ -1333,15 +1464,17 @@
               <h3 class="font-display font-bold text-lg text-stone-900 leading-snug mb-2">
                 ${escapeHtml(ev.title)}
               </h3>
-              <p class="text-sm text-stone-600 line-clamp-2 mb-4 flex-1">
+              <p class="text-sm text-stone-600 line-clamp-2 mb-2 flex-1">
                 ${escapeHtml(ev.description)}
               </p>
-              <div class="pt-3 border-t border-stone-200/70 space-y-2.5 text-xs">
+              ${galleryStrip}
+              <div class="pt-3 mt-2 border-t border-stone-200/70 space-y-2.5 text-xs">
                 <div class="text-stone-600 font-medium truncate">📍 ${escapeHtml(ev.location)}</div>
                 <div class="flex flex-wrap items-center justify-between gap-2">
                   <div class="flex flex-wrap items-center gap-1.5">
                     ${navLink ? `<a href="${escapeHtml(navLink)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold transition">Navigacija 📍</a>` : ''}
                     ${eventLink ? `<a href="${escapeHtml(eventLink)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-amber-100/80 hover:bg-amber-200/80 text-amber-900 font-semibold transition">Nuoroda ↗</a>` : ''}
+                    <button type="button" onclick="downloadEventIcs('${ev.id}')" class="px-2.5 py-1 rounded-lg bg-forest-50 hover:bg-forest-100 text-forest-800 font-semibold transition" title="Atsisiųsti į kalendorių">Kalendorius 📅</button>
                   </div>
                   <button onclick="openEventDetails('${ev.id}')" class="px-3 py-1.5 rounded-lg bg-forest-100/80 hover:bg-forest-200/80 text-forest-900 font-semibold shrink-0 transition">
                     Plačiau →
@@ -1360,6 +1493,7 @@
       const timeText = formatTimeRange(ev);
       const navLink = buildNavigationLink(ev.mapUrl, ev.location);
       const eventLink = normalizeUrl(ev.ticketUrl);
+      const galleryStrip = renderGalleryStrip(ev.gallery, ev.title);
 
       document.getElementById('detailsModalContent').innerHTML = `
         <div class="relative h-64 bg-stone-200">
@@ -1378,10 +1512,12 @@
             <div><strong>Vieta:</strong> ${escapeHtml(ev.location)}</div>
           </div>
           <p class="text-stone-700 text-sm sm:text-base leading-relaxed whitespace-pre-line">${escapeHtml(ev.description)}</p>
+          ${galleryStrip}
           <div class="pt-3 flex flex-wrap items-center justify-between gap-2">
             <div class="flex flex-wrap gap-2">
               ${navLink ? `<a href="${escapeHtml(navLink)}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-white text-xs font-semibold">Navigacija į vietą 📍</a>` : ''}
               ${eventLink ? `<a href="${escapeHtml(eventLink)}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-amberwarm-500 hover:bg-amberwarm-600 text-white text-xs font-semibold">Bilietai / Nuoroda ↗</a>` : ''}
+              <button type="button" onclick="downloadEventIcs('${ev.id}')" class="px-4 py-2 rounded-xl bg-forest-100 hover:bg-forest-200 text-forest-900 text-xs font-semibold">Į kalendorių (.ics) 📅</button>
             </div>
             <div class="flex gap-2">
               <button onclick="closeDetailsModal(); openAdminModal('events'); editEvent('${ev.id}');" class="px-4 py-2 rounded-xl border border-stone-300 text-xs font-semibold text-stone-700 hover:bg-stone-50">Redaguoti</button>
@@ -1436,6 +1572,7 @@
         const navLink = buildNavigationLink(cafe.mapUrl, cafe.address || cafe.name);
         const sectionHeading = (cafe.menuHeading && cafe.menuHeading.trim()) ? cafe.menuHeading.trim() : 'Rekomenduojama iš meniu';
         const hasMenuMedia = Boolean((cafe.menuMedia || '').trim());
+        const galleryStrip = renderGalleryStrip(cafe.gallery, cafe.name);
 
         const menuHtml = (cafe.menu || []).map(m => {
           const dishImg = (m.image || '').trim();
@@ -1469,9 +1606,10 @@
                 ${cafe.address ? `<div>📍 ${escapeHtml(cafe.address)}</div>` : ''}
                 ${cafe.hours ? `<div>🕒 ${escapeHtml(cafe.hours)}</div>` : ''}
               </div>
-              <p class="text-sm text-stone-600 mt-3 mb-4">${escapeHtml(cafe.description)}</p>
+              <p class="text-sm text-stone-600 mt-3 mb-2">${escapeHtml(cafe.description)}</p>
+              ${galleryStrip}
               ${menuHtml ? `
-                <div class="mb-4 bg-[#f3f0e8] rounded-xl p-3 border border-stone-200/70">
+                <div class="my-4 bg-[#f3f0e8] rounded-xl p-3 border border-stone-200/70">
                   <div class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-1">${escapeHtml(sectionHeading)}</div>
                   <ul>${menuHtml}</ul>
                 </div>
@@ -1502,6 +1640,22 @@
       renderInsights();
     }
 
+    function toggleInsightPlayer(insId) {
+      const box = document.getElementById('insPlayer-' + insId);
+      if (!box) return;
+      const ins = appState.insights.find(item => item.id === insId);
+      const vid = extractYoutubeId(ins && ins.musicUrl ? ins.musicUrl : '');
+      if (!vid) return;
+
+      if (box.classList.contains('hidden')) {
+        box.innerHTML = `<div class="aspect-video rounded-xl overflow-hidden bg-black mt-3"><iframe class="w-full h-full" src="https://www.youtube.com/embed/${vid}?autoplay=1" title="Įrašo grotuvas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+        box.classList.remove('hidden');
+      } else {
+        box.innerHTML = '';
+        box.classList.add('hidden');
+      }
+    }
+
     function renderInsights() {
       const q = (document.getElementById('insightsSearchInput').value || '').toLowerCase().trim();
       let list = appState.insights.filter(item => !item.hidden);
@@ -1528,35 +1682,108 @@
       }
 
       const fallbackImg = 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=900&q=80';
-      grid.innerHTML = list.map(ins => `
-        <article class="bg-[#fcfbf8] rounded-2xl border border-stone-200/90 overflow-hidden shadow-sm flex flex-col">
-          ${ins.image ? `
-            <div class="h-52 bg-stone-900 relative overflow-hidden">
-              <img src="${escapeHtml(ins.image)}" alt="${escapeHtml(ins.band)}" class="w-full h-full object-cover" onerror="this.src='${fallbackImg}'" />
-              <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                <span class="px-2.5 py-1 rounded-lg bg-stone-900/80 text-white text-xs font-semibold">${escapeHtml(ins.scope)}</span>
-                ${ins.genre ? `<span class="px-2.5 py-1 rounded-lg bg-amber-500 text-white text-xs font-semibold">${escapeHtml(ins.genre)}</span>` : ''}
+      grid.innerHTML = list.map(ins => {
+        const galleryStrip = renderGalleryStrip(ins.gallery, `${ins.band} – ${ins.title}`);
+        const ytId = extractYoutubeId(ins.musicUrl);
+        const extLink = normalizeUrl(ins.musicUrl);
+
+        return `
+          <article class="bg-[#fcfbf8] rounded-2xl border border-stone-200/90 overflow-hidden shadow-sm flex flex-col">
+            ${ins.image ? `
+              <div class="h-52 bg-stone-900 relative overflow-hidden">
+                <img src="${escapeHtml(ins.image)}" alt="${escapeHtml(ins.band)}" class="w-full h-full object-cover" onerror="this.src='${fallbackImg}'" />
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 rounded-lg bg-stone-900/80 text-white text-xs font-semibold">${escapeHtml(ins.scope)}</span>
+                  ${ins.genre ? `<span class="px-2.5 py-1 rounded-lg bg-amber-500 text-white text-xs font-semibold">${escapeHtml(ins.genre)}</span>` : ''}
+                </div>
+              </div>
+            ` : ''}
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-stone-500 mb-2">
+                <span class="font-bold uppercase tracking-wider text-forest-800">${escapeHtml(ins.band)}</span>
+                <span>📍 ${escapeHtml(ins.city)} ${ins.date ? '• ' + escapeHtml(ins.date) : ''}</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-stone-900 mb-3">${escapeHtml(ins.title)}</h3>
+              <p class="text-sm text-stone-700 leading-relaxed whitespace-pre-line flex-1">${escapeHtml(ins.body)}</p>
+              ${galleryStrip}
+              ${ytId ? `<div id="insPlayer-${ins.id}" class="hidden"></div>` : ''}
+              <div class="mt-4 pt-3 border-t border-stone-200/70 flex flex-wrap items-center justify-between gap-3">
+                <div class="flex flex-wrap items-center gap-3">
+                  ${ytId ? `
+                    <button type="button" onclick="toggleInsightPlayer('${ins.id}')" class="px-2.5 py-1 rounded-lg bg-red-50 hover:bg-red-100 text-red-700 text-xs font-semibold transition">
+                      ▶ Žiūrėti čia
+                    </button>
+                  ` : ''}
+                  ${extLink ? `
+                    <a href="${escapeHtml(extLink)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-stone-600 hover:text-stone-900">
+                      <span>Nuoroda ↗</span>
+                    </a>
+                  ` : ''}
+                  <button type="button" onclick="copyShareLink(this)" class="text-xs font-medium text-stone-500 hover:text-stone-800">Dalintis</button>
+                </div>
+                <button onclick="openAdminModal('insights'); editInsight('${ins.id}');" class="text-xs font-semibold text-stone-500 hover:text-stone-800">Redaguoti įrašą</button>
               </div>
             </div>
-          ` : ''}
-          <div class="p-6 flex-1 flex flex-col">
-            <div class="flex flex-wrap items-center justify-between gap-2 text-xs text-stone-500 mb-2">
-              <span class="font-bold uppercase tracking-wider text-forest-800">${escapeHtml(ins.band)}</span>
-              <span>📍 ${escapeHtml(ins.city)} ${ins.date ? '• ' + escapeHtml(ins.date) : ''}</span>
-            </div>
-            <h3 class="font-display font-bold text-xl text-stone-900 mb-3">${escapeHtml(ins.title)}</h3>
-            <p class="text-sm text-stone-700 leading-relaxed whitespace-pre-line flex-1">${escapeHtml(ins.body)}</p>
-            <div class="mt-4 pt-3 border-t border-stone-200/70 flex items-center justify-between gap-3">
-              ${ins.musicUrl ? `
-                <a href="${escapeHtml(ins.musicUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-red-600 hover:text-red-700">
-                  <span>▶ Paklausyti kūrinio / įrašo</span>
-                </a>
-              ` : '<span></span>'}
-              <button onclick="openAdminModal('insights'); editInsight('${ins.id}');" class="text-xs font-semibold text-stone-500 hover:text-stone-800">Redaguoti įrašą</button>
-            </div>
-          </div>
-        </article>
-      `).join('');
+          </article>
+        `;
+      }).join('');
+    }
+
+    // GALLERY EDITOR HELPERS
+    function addGalleryRow(containerId, imgUrl = '') {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const rowId = containerId + '-g-' + Date.now() + '-' + Math.floor(Math.random() * 10000);
+      const row = document.createElement('div');
+      row.id = rowId;
+      row.className = 'gallery-editor-row flex items-center gap-1.5';
+      row.innerHTML = `
+        <input type="text" placeholder="Nuotraukos URL..." value="${escapeHtml(imgUrl)}" class="gallery-url flex-1 px-2.5 py-1.5 rounded-lg border border-stone-300 bg-[#fcfbf8] text-xs" />
+        <label class="px-2.5 py-1.5 rounded-lg bg-stone-200 hover:bg-stone-300 text-stone-800 text-[11px] font-semibold cursor-pointer shrink-0">
+          Foto
+          <input type="file" accept="image/*" class="hidden" onchange="handleGalleryFileUpload(event, '${rowId}')" />
+        </label>
+        <button type="button" onclick="this.closest('.gallery-editor-row').remove()" class="px-2 py-1 text-red-600 hover:text-red-800 font-bold text-xs">✕</button>
+      `;
+      container.appendChild(row);
+    }
+
+    function handleGalleryFileUpload(event, rowId) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const row = document.getElementById(rowId);
+      if (!row) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const tempImg = new Image();
+        tempImg.onload = function() {
+          const canvas = document.createElement('canvas');
+          const maxW = 850;
+          const scale = tempImg.width > maxW ? maxW / tempImg.width : 1;
+          canvas.width = tempImg.width * scale;
+          canvas.height = tempImg.height * scale;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(tempImg, 0, 0, canvas.width, canvas.height);
+          row.querySelector('.gallery-url').value = canvas.toDataURL('image/jpeg', 0.8);
+        };
+        tempImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function collectGalleryFromEditor(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return [];
+      return Array.from(container.querySelectorAll('.gallery-url'))
+        .map(inp => inp.value.trim())
+        .filter(Boolean);
+    }
+
+    function populateGalleryEditor(containerId, galleryArr) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      (galleryArr || []).forEach(url => addGalleryRow(containerId, url));
     }
 
     // ADMIN MODAL LOGIC
@@ -1683,6 +1910,7 @@
       document.getElementById('evFamily').checked = false;
       document.getElementById('evHidden').checked = false;
       updateImagePreview('evImage', 'evImagePreview');
+      populateGalleryEditor('evGalleryEditor', []);
     }
 
     function editEvent(id) {
@@ -1706,6 +1934,7 @@
       document.getElementById('evFamily').checked = Boolean(ev.family);
       document.getElementById('evHidden').checked = Boolean(ev.hidden);
       updateImagePreview('evImage', 'evImagePreview');
+      populateGalleryEditor('evGalleryEditor', ev.gallery || []);
     }
 
     function duplicateEvent(id) {
@@ -1714,7 +1943,8 @@
       const copy = {
         ...ev,
         id: 'ev-' + Date.now(),
-        title: ev.title + ' (kopija)'
+        title: ev.title + ' (kopija)',
+        gallery: [...(ev.gallery || [])]
       };
       appState.events.unshift(copy);
       saveAppState();
@@ -1759,6 +1989,7 @@
         ticketUrl: document.getElementById('evTicketUrl').value.trim(),
         mapUrl: document.getElementById('evMapUrl').value.trim(),
         image: document.getElementById('evImage').value.trim(),
+        gallery: collectGalleryFromEditor('evGalleryEditor'),
         description,
         featured: document.getElementById('evFeatured').checked,
         free: document.getElementById('evFree').checked,
@@ -1902,6 +2133,7 @@
       document.getElementById('cafeDescription').value = '';
       updateImagePreview('cafeImage', 'cafeImagePreview');
       updateImagePreview('cafeMenuMedia', 'cafeMenuMediaPreview');
+      populateGalleryEditor('cafeGalleryEditor', []);
       const menuList = document.getElementById('cafeMenuEditorList');
       menuList.innerHTML = '';
       addMenuItemRow();
@@ -1924,6 +2156,7 @@
       document.getElementById('cafeDescription').value = cafe.description || '';
       updateImagePreview('cafeImage', 'cafeImagePreview');
       updateImagePreview('cafeMenuMedia', 'cafeMenuMediaPreview');
+      populateGalleryEditor('cafeGalleryEditor', cafe.gallery || []);
 
       const menuList = document.getElementById('cafeMenuEditorList');
       menuList.innerHTML = '';
@@ -1941,6 +2174,7 @@
         ...cafe,
         id: 'cafe-' + Date.now(),
         name: cafe.name + ' (kopija)',
+        gallery: [...(cafe.gallery || [])],
         menu: (cafe.menu || []).map(m => ({ ...m }))
       });
       saveAppState();
@@ -1984,6 +2218,7 @@
         website: document.getElementById('cafeWebsite').value.trim(),
         mapUrl: document.getElementById('cafeMapUrl').value.trim(),
         image: document.getElementById('cafeImage').value.trim(),
+        gallery: collectGalleryFromEditor('cafeGalleryEditor'),
         menuMedia: document.getElementById('cafeMenuMedia').value.trim(),
         menuHeading: document.getElementById('cafeMenuHeading').value.trim() || 'Rekomenduojama iš meniu',
         description: document.getElementById('cafeDescription').value.trim(),
@@ -2036,6 +2271,7 @@
       document.getElementById('insBody').value = '';
       document.getElementById('insHidden').checked = false;
       updateImagePreview('insImage', 'insImagePreview');
+      populateGalleryEditor('insGalleryEditor', []);
     }
 
     function editInsight(id) {
@@ -2054,6 +2290,7 @@
       document.getElementById('insBody').value = ins.body || '';
       document.getElementById('insHidden').checked = Boolean(ins.hidden);
       updateImagePreview('insImage', 'insImagePreview');
+      populateGalleryEditor('insGalleryEditor', ins.gallery || []);
     }
 
     function duplicateInsight(id) {
@@ -2062,7 +2299,8 @@
       appState.insights.unshift({
         ...ins,
         id: 'ins-' + Date.now(),
-        title: ins.title + ' (kopija)'
+        title: ins.title + ' (kopija)',
+        gallery: [...(ins.gallery || [])]
       });
       saveAppState();
       renderInsights();
@@ -2099,6 +2337,7 @@
         genre: document.getElementById('insGenre').value.trim(),
         musicUrl: document.getElementById('insMusicUrl').value.trim(),
         image: document.getElementById('insImage').value.trim(),
+        gallery: collectGalleryFromEditor('insGalleryEditor'),
         body,
         hidden: document.getElementById('insHidden').checked
       };
@@ -2244,7 +2483,7 @@
     function resetAllToDefaults() {
       if (!confirm('Ar tikrai norite išvalyti visus naršyklėje išsaugotus pakeitimus ir atstatyti pradinius duomenis?')) return;
       localStorage.removeItem(STORAGE_KEY);
-      localStorage.removeItem('renginiai_druskininkuose_v6');
+      localStorage.removeItem('renginiai_druskininkuose_v7');
       appState = getEmbeddedData();
       selectedCalendarDate = '';
       initPage();
